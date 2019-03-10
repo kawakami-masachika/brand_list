@@ -1,0 +1,12 @@
+
+<p>マイページ</p>
+<ul>
+  <li>名前:<%= @user.name %></li>
+  <li>年齢:<%= @user.age %>歳</li>
+  <li>性別:<%= @user.sex %></li>
+  <% if  @user.fav_brand.nil? %>
+    <li>お気に入りブランド:なし</li>
+  <% else %>
+    <li>お気に入りブランド:<%= @user.fav_brand%></li>
+  <% end %>
+</ul>
