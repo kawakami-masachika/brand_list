@@ -48,6 +48,19 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  
+   #kawakami add 
+  #デバッグツール 
+  gem 'better_errors'
+  gem 'byebug'
+  gem 'pry'
+  gem 'pry-byebug'
+  gem 'pry-doc'
+  gem 'pry-rails'
+  gem 'pry-stack_explorer'
+  gem 'binding_of_caller'
+  #0209 kawakami add ログイン機能
+
 end
 
 group :test do
@@ -60,3 +73,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'devise'
