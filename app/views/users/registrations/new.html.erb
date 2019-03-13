@@ -15,9 +15,26 @@
   <label><%= f.radio_button :sex, "男" %> 男</label>
   <label><%= f.radio_button :sex, "女" %> 女</label>
 
+  
   <div class="field">
     <%= f.label :お気に入りブランド %><br />
-    <%= f.text_field :fav_brand, autofocus: true, autocomplete: "fav_brand" %>
+    <%= f.text_field :fav_brand_1, autofocus: true, autocomplete: "fav_brand" %>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :fav_brand_2, autofocus: true, autocomplete: "fav_brand" %>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :fav_brand_3, autofocus: true, autocomplete: "fav_brand" %>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :fav_brand_4, autofocus: true, autocomplete: "fav_brand" %>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :fav_brand_5, autofocus: true, autocomplete: "fav_brand" %>
   </div>
 
 
