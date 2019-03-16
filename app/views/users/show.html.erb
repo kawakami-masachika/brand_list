@@ -7,6 +7,6 @@
   <% if  @user.fav_brand.nil? %>
     <li>お気に入りブランド:なし</li>
   <% else %>
-    <li>お気に入りブランド:<%= @user.fav_brand.delete("[]\"nil") %></li>
+    <li>お気に入りブランド:<%= @user.fav_brand %></li>
   <% end %>
 </ul>
