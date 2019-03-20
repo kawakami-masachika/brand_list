@@ -1,0 +1,29 @@
+<%= form_for @user do |f|%>
+ <div class="field">
+    <%= f.label :名前 %><br />
+    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :年齢 %><br />
+    <%= f.number_field :age, autofocus: true %>
+  </div>
+  <label><%= f.radio_button :sex, "男" %> 男</label>
+  <label><%= f.radio_button :sex, "女" %> 女</label>
+
+  
+  <div class="field">
+    <%= f.label :お気に入りブランド %><br />
+    <%= f.text_field :fav_brand_1, autofocus: true, autocomplete: "fav_brand" %>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :fav_brand_2, autofocus: true, autocomplete: "fav_brand" %>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :fav_brand_3, autofocus: true, autocomplete: "fav_brand" %>
+  </div>
+
+<%= f.submit "更新" %>
+<% end %>
