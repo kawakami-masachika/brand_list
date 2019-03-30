@@ -7,11 +7,6 @@ class UsersController < ApplicationController
   end 
 
   def edit
-    if @user.fav_brand.blank?
-      @fav_brands = nil
-    else
-     @fav_brands = @user.fav_brand.split(' ')
-    end
   end
 
   def update
