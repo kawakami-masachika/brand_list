@@ -1,0 +1,14 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        name: 名前
+        age: 年齢
+        sex: 性別
+        fav_brand_1: お気入りブランド
+        fav_brand_2: お気入りブランド
+        fav_brand_3: お気入りブランド
+  helpers:
+    submit:
+      create: 登録する
+      
