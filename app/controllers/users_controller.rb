@@ -7,16 +7,22 @@ class UsersController < ApplicationController
   end 
 
   def edit
+    if @user.fav_brand.blank?
+      @fav_brands = nil
+    else
+     @fav_brands = @user.fav_brand.split(' ')
+    end
   end
 
-   def update
-    
+  def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      #binding.pry
-      redirect_to @user
+      redirect_to @user 
+      flash[:notice] = 'ユーザー情報の編集をしました'
     else
+      flash.now[:alert] = 'ユーザー情報を編集できませんでした'
       render :edit
+      
     end
   end
 
