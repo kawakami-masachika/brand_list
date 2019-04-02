@@ -2,6 +2,7 @@ class User < ApplicationRecord
   attr_accessor :fav_brand_1 , :fav_brand_2 , :fav_brand_3
 
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
+  has_many :shops
   
   validates :name, 
     presence: true,
