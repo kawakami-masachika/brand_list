@@ -1,4 +1,4 @@
-
+<%= render 'layouts/flash'%>
 <p>マイページ</p>
 <ul>
   <li>名前:<%= @user.name %></li>
@@ -13,3 +13,12 @@
 
 <%= link_to 'プロフィールを編集', edit_user_path(current_user.id) %>
 <%= link_to 'お問い合わせ', '/pages/contact'%>
+
+<p><span><%=current_user.name %> :投稿ショップ一覧</span></p>
+
+
+<% @shops.each do |shop|%>
+  
+  <%= link_to shop.name , shop_path(shop.id) %>
+  <hr>
+<% end %>

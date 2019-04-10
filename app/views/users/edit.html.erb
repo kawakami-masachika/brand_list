@@ -1,4 +1,6 @@
 
+<%= render 'layouts/flash'%>
+
 <% if @user.errors.any? %>
   <div id="error_explanation" class="alert alert-danger">
     <ul>
@@ -9,6 +11,8 @@
   </div>
 <% end %>
 
+
+
 <%= form_for @user do |f|%>
   <div class="field">
     <%= f.label :name %><br />
@@ -16,31 +20,16 @@
   </div>
 
   <div class="field">
-    <%= f.label :年齢 %><br />
+    <%= f.label :age %><br />
     <%= f.number_field :age, autofocus: true %>
   </div>
   <label><%= f.radio_button :sex, "男" %> 男</label>
   <label><%= f.radio_button :sex, "女" %> 女</label>
 
-  <% if @fav_brands.nil? %>
+  
 
     <div class="field">
-      <%= f.label :お気に入りブランド %><br />
-      <%= f.text_field :fav_brand_1, autofocus: true, autocomplete: "fav_brand" %>
-    </div>
-
-    <div class="field">
-      <%= f.text_field :fav_brand_2, autofocus: true, autocomplete: "fav_brand" %>
-    </div>
-
-    <div class="field">
-      <%= f.text_field :fav_brand_3, autofocus: true, autocomplete: "fav_brand" %>
-    </div>
-
-  <% else %>
-
-    <div class="field">
-      <%= f.label :お気に入りブランド %><br />
+      <%= f.label :fav_brand %><br />
       <%= f.text_field :fav_brand_1, value: @fav_brands[0], autofocus: true, autocomplete: "fav_brand" %>
     </div>
 
@@ -51,8 +40,6 @@
     <div class="field">
       <%= f.text_field :fav_brand_3, value: @fav_brands[2], autofocus: true, autocomplete: "fav_brand" %>
     </div>
-
-  <% end %>
 
 <%= f.submit "更新" %>
 <% end %>
