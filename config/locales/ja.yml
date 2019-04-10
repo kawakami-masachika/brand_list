@@ -17,7 +17,3 @@ ja:
         tel: 電話番号
         url: URL
         information: 共有したい情報
-      helpers:
-        create: "新規登録"
-        update: "更新"
-      
