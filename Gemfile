@@ -80,4 +80,4 @@ gem 'high_voltage'
 gem 'rails-i18n'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
-
+gem 'carrierwave'
