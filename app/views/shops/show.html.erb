@@ -1,4 +1,27 @@
 <h1>show # shop</h1>
 <%= render 'layouts/flash'%>
+
+
+<%= image_tag @shop.images_url %>
+
+<ul>
+  <li> 
+    <%= @shop.name %>
+  </li>
+  <li>
+    <%= @shop.address %>
+  </li>
+  <li>
+    <%= @shop.tel %>
+  </li>
+  <li>
+    <%= @shop.business_period %>
+  </li>
+  <li>
+    <%= @shop.information %>
+  </li>
+</ul>
+
+
 <%= link_to '編集する', edit_shop_path(@shop.id)%>
 <%= link_to '削除する', shop_path(@shop.id), method: :delete%>
