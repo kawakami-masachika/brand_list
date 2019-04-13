@@ -14,11 +14,13 @@
 <%= link_to 'プロフィールを編集', edit_user_path(current_user.id) %>
 <%= link_to 'お問い合わせ', '/pages/contact'%>
 
-<p><span><%=current_user.name %> :投稿ショップ一覧</span></p>
+<p><span><%=@user.name %> :投稿ショップ一覧</span></p>
 
 
 <% @shops.each do |shop|%>
-  
-  <%= link_to shop.name , shop_path(shop.id) %>
-  <hr>
+  <strong><%= shop.name%></strong><br>
+  <%= link_to shop_path(shop.id) do %>
+    <%= image_tag shop.images.thumb.to_s %>
+  <% end %>
+  <hr> 
 <% end %>
