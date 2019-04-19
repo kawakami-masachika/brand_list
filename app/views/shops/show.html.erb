@@ -1,9 +1,11 @@
 <h1>show # shop</h1>
 <%= render 'layouts/flash'%>
 
-
-<%= image_tag @shop.images_url %>
-
+<% if @shop.images? %>
+  <%= image_tag @shop.images_url %>
+<% else %>
+  <%= image_tag 'koeda.png' %>
+<% end %>
 <ul>
   <li> 
     <%= @shop.name %>
@@ -22,6 +24,37 @@
   </li>
 </ul>
 
+<h3>レビュー 一覧</h3>
+<% @reviews.each do |review|%>
+  <em>ユーザー名</em>
+  <%= link_to user_path(review.user_id) do %>
+    <%= review.user.name if review.user %><br>
+  <% end %>
+    <%= review.title %><br>
+    <%= review.comment %>
+    <br>  
+<% end %>
 
+<br>
+
+<%= form_for @review , :url => {:action => :new} do |f| %>
+  <div>
+  <%= f.label :title %><br>
+  <%= f.text_field :title%>
+  </div>
+  
+  <div>
+  <%= f.label :comment %><br>
+  <%= f.text_area :comment %>
+  </div>
+
+  <%= f.hidden_field :user_id %>
+  <%= f.hidden_field :shop_id %>
+  <%= f.submit '投稿する'%>
+
+<% end %>
+
+
+<%= link_to 'コメントをする', new_shop_review_path(@shop.id) %>
 <%= link_to '編集する', edit_shop_path(@shop.id)%>
 <%= link_to '削除する', shop_path(@shop.id), method: :delete%>

@@ -2,7 +2,9 @@ class User < ApplicationRecord
   attr_accessor :fav_brand_1 , :fav_brand_2 , :fav_brand_3
 
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
-  has_many :shops
+  has_many :shops#, through: :review
+  has_many :reviews, through: :shops#, through: :shops
+  #has_many :review_shops, through: :reviews, source: :shop
   
   validates :name, 
     presence: true,
@@ -21,7 +23,7 @@ class User < ApplicationRecord
     validates :fav_brand_3
   end
   
-  # before_create :join_fav_brands
+  #before_create :join_fav_brands
   # before_update :join_fav_brands
 
 
@@ -34,6 +36,7 @@ class User < ApplicationRecord
     else
       self.fav_brand = fav_brand_1 + ' ' + fav_brand_2 + ' ' + fav_brand_3
     end
+    self.save
   end
   
 end

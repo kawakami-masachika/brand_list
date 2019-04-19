@@ -1,6 +1,6 @@
 class ShopsController < ApplicationController
   before_action :authenticate_user!,except:[:show,:index,:update]
-  before_action :set_shop ,only:[:show,:edit,:update, :destroy]
+  before_action :set_shop ,only:[:show, :edit,:update, :destroy]
   def new
     @shop = Shop.new
   end
@@ -31,6 +31,9 @@ class ShopsController < ApplicationController
   end
 
   def show
+     @shop = Shop.includes(:user).find(params[:id])
+     @reviews = @shop.reviews.includes(:user).all
+     @review  = @shop.reviews.build(user_id: current_user.id) if current_user
   end
 
   def destroy

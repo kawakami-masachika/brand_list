@@ -1,0 +1,16 @@
+<h1>Review#new</h1>
+
+<%= form_for [@shop,@review] do |f| %>
+  <div>
+  <%= f.label :title %><br>
+  <%= f.text_field :title%>
+  </div>
+  
+  <div>
+  <%= f.label :comment %><br>
+  <%= f.text_area :comment %>
+  </div>
+  <% binding.pry %>
+  <%= f.submit '投稿する'%>
+
+<% end %>

@@ -11,5 +11,7 @@ Rails.application.routes.draw do
 
   root to:'users#index'
   resources :users, only: [:show,:index,:edit,:update]
-  resources :shops
+  resources :shops do
+    resources :reviews
+  end
 end
