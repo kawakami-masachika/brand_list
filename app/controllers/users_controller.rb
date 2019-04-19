@@ -3,8 +3,6 @@ class UsersController < ApplicationController
   before_action :set_user , only:[:show,:edit,:update]
 
   def show
-    #binding.pry
-    @shops = @user.shops
   end 
 
   def edit
