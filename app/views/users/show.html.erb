@@ -16,11 +16,24 @@
 
 <p><span><%=@user.name %> :投稿ショップ一覧</span></p>
 
-
-<% @shops.each do |shop|%>
+<% @user.shops.each do |shop|%>
   <strong><%= shop.name%></strong><br>
   <%= link_to shop_path(shop.id) do %>
-    <%= image_tag shop.images.thumb.to_s %>
+    <% if shop.images? %>
+      <%= image_tag shop.images.thumb.url %>
+    <% else %>
+      <%= image_tag 'koeda.png' %>
+    <% end %>
   <% end %>
   <hr> 
+<% end %>
+
+<strong><hr></strong>
+<p><span>レビュー一覧</span></p>
+<% @user.reviews.each do |user_review| %>
+  <%=link_to shop_path(user_review.shop_id) do %>
+    <%= user_review.title %>
+    <%= user_review.comment %>
+    <br>
+  <% end %>
 <% end %>
