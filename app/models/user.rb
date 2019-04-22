@@ -3,7 +3,7 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
   has_many :shops#, through: :review
-  has_many :reviews, through: :shops#, through: :shops
+  has_many :reviews#, through: :shops#, through: :shops
   #has_many :review_shops, through: :reviews, source: :shop
   
   validates :name, 
