@@ -32,8 +32,9 @@
 <p><span>レビュー一覧</span></p>
 <% @user.reviews.each do |user_review| %>
   <%=link_to shop_path(user_review.shop_id) do %>
-    <%= user_review.title %>
-    <%= user_review.comment %>
+    <p><%= user_review.title %>:</p>
+    <% end %>
+    <p><%= user_review.comment %></p>
     <br>
-  <% end %>
 <% end %>
+
