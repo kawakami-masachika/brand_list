@@ -1,0 +1,10 @@
+<h1>Review#index</h1>
+
+<% @shop.reviews.each do |review|%>
+<span>タイトル︰</span>
+  <%= review.title %>
+  <br>
+  <span>レビュー︰</span>
+  <%= review.comment %>
+  <hr>
+<% end %> 
