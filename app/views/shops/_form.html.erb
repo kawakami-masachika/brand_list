@@ -40,6 +40,12 @@
     <%= f.label :images %> <br>
     <%= f.file_field :images %>
   </div>
+  
+<br>
+  <div>
+    <p>タグ</p>
+    <%= text_field_tag 'shop[brand_list]', shop.brand_list.join(","), class: "form-control" %>
+  </div>
 
   <% if request.path_info == new_shop_path  %>
     <%= f.submit '登録' %>
