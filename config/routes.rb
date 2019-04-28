@@ -9,7 +9,8 @@ Rails.application.routes.draw do
       unlocks: 'user/unlocks',
     }, only: [:confirmation,:password,:registration, :session, :unlock]
 
-  root to:'users#index'
+  #root to:'users#index'
+  root to:'shops#index'
   resources :users, only: [:show,:index,:edit,:update]
   resources :shops do
     resources :reviews
