@@ -33,6 +33,11 @@ class ShopsController < ApplicationController
   def show
       @shop = Shop.includes(:user).find(params[:id])
       @reviews = @shop.reviews.includes(:user).all
+      #@tags = ActsAsTaggableOn::Tag.where(name: 'sample1')
+      #@tags = ActsAsTaggableOn::Tag.where("(name = ? ) OR (name = ? )",'sample1','sample2')
+      #@tags =  ActsAsTaggableOn::Tag.where(name: @shop.tag_list)
+      #下記に変更
+      @brands =  ActsAsTaggableOn::Tag.where(name: @shop.brand_list)
     #  @review  = @shop.reviews.build(user_id: current_user.id) if current_user
   end
 
@@ -47,7 +52,7 @@ class ShopsController < ApplicationController
   end
 
   def shop_params
-    params.require(:shop).permit(:name,:address,:business_period,:staition,:tel,:url,:images,:information)
+    params.require(:shop).permit(:name,:address,:business_period,:staition,:tel,:url,:images,:information,:brand_list)
   end
 
 end

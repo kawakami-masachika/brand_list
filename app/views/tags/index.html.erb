@@ -1,0 +1,11 @@
+
+<h1>Tags#index</h1>
+
+<%  @brands.each do |brand|%>
+<span>タグ名</span>
+<%= brand.name %>
+<%= link_to '詳細',tag_path(brand.id)%>
+<%= link_to '削除',tag_path(brand.id), method: :delete %>
+<br>
+
+<% end %> 

@@ -1,0 +1,15 @@
+
+<h1>Tag#show</h1>
+
+<%= @brand.name %>
+<hr>
+<h3><%= @brand.name %> has Shops</h3>
+
+<% @shops.each do |shop|%>
+
+  <%= link_to shop_path(shop.id) do %>
+    <%= shop.name %>
+    <br>
+  <% end %>
+<% end %>
+
