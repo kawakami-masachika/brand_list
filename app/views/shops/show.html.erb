@@ -24,6 +24,16 @@
   </li>
 </ul>
 
+  <h3>タグ</h3>
+  <% @brands.each do |brand|%>
+    <ul>
+      <%= link_to tag_path(brand.id) do %>
+        <li><%= brand.name %></li>
+      <% end %>
+    </ul>
+
+  <% end %>
+
 <h3>レビュー 一覧</h3>
 <% @reviews.each do |review|%>
   <em>ユーザー名</em>
@@ -36,6 +46,9 @@
   <%= review.comment %>
   <br>
   <%= link_to '全文見る',shop_review_path(@shop.id,review.id)%>
+
+ 
+
   <% if review.user_id == current_user.id %>
     <%= link_to '編集', edit_shop_review_path(@shop.id,review.id) %>
     <%= link_to '削除', shop_review_path(@shop.id,review.id),method: :delete %>
