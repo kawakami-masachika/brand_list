@@ -1,6 +1,11 @@
 class ShopsController < ApplicationController
   before_action :authenticate_user!,except:[:show,:index,:update]
   before_action :set_shop ,only:[:show, :edit,:update, :destroy]
+  
+  def index
+    @shops = Shop.all
+  end
+
   def new
     @shop = Shop.new
   end
@@ -9,7 +14,7 @@ class ShopsController < ApplicationController
     @shop = Shop.new(shop_params)
     @shop.user_id = current_user.id
     if @shop.save
-      redirect_to current_user
+      redirect_to action: 'index'
       flash[:notice] = "ショップ情報を投稿しました"
     else
       render :new

@@ -1,0 +1,10 @@
+<h1>SHOP#index</h1>
+<%= render 'layouts/flash'%>
+<% @shops.each do |shop|%>
+  <%= shop.name %>
+    <% if shop.images? %>
+      <%= image_tag shop.images_url %>
+    <% else %>
+      <%= image_tag 'koeda.png' %>
+    <% end %>
+<% end %>
