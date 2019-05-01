@@ -13,7 +13,11 @@ Rails.application.routes.draw do
   root to:'shops#index'
   resources :users, only: [:show,:index,:edit,:update]
   resources :shops do
-    resources :reviews
+    collection do
+      get 'search'
+      post 'search'
+    end
+      resources :reviews
   end
   resources :tags, only: [:index, :show, :destroy]
 end
