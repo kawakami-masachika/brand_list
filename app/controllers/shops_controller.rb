@@ -4,7 +4,27 @@ class ShopsController < ApplicationController
   
   def index
     @shops = Shop.all
+    
+    
+    # brands = []
+    # #binding.pry
+    # if params[:q].present?
+    #   keywords = params[:q][:brand_name_eq].split(/[\p{blank}\s]+/)
+    #   keywords.each { |value| brands.push(brand_name_eq: value)}  
+    # end
+    
+    # @query = Shop.tagged_with([brands], :any => true)
+    
+    #@result_shops = @query.result(distinct: true)
   end
+
+  def search 
+    #binding.pry
+    if params[:name].present?
+      @brands = Shop.serach(params[:name].split(/[\p{blank}\s]+/))
+    end 
+  end
+
 
   def new
     @shop = Shop.new
@@ -57,7 +77,25 @@ class ShopsController < ApplicationController
   end
 
   def shop_params
-    params.require(:shop).permit(:name,:address,:business_period,:staition,:tel,:url,:images,:information,:brand_list)
+    params.require(:shop).permit(:name,
+                                :address,
+                                :business_period,
+                                :staition,:tel,
+                                :url,
+                                :images,
+                                :information,
+                                :brand_list,
+                                )
   end
 
 end
+
+
+
+
+
+
+
+
+
+  
