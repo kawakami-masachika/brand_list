@@ -11,5 +11,10 @@
     <%= shop.name %>
     <br>
   <% end %>
+  <% if shop.images? %>
+      <%= image_tag shop.images.thumb.url %>
+    <% else %>
+      <%= image_tag 'koeda.png' %>
+    <% end %>
 <% end %>
 
