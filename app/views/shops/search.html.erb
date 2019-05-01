@@ -1,0 +1,23 @@
+<h2>ブランド名検索</h2>
+
+<%= form_tag(search_shops_path, :method => :get) do %>
+  <%= text_field_tag :name %>
+  <%= submit_tag '検索',:name => nil %>
+<% end %>
+
+<%  if @brands.present? %>
+  <% @brands.each do |brand|%>
+    <p><%= brand.name %></p>
+      <% if brand.images? %>
+        <%= link_to shop_path(brand.id) do %>
+          <%= image_tag brand.images_url %>
+        <% end %>
+        <hr>
+      <% else %>
+        <%= link_to shop_path(brand.id) do %>
+          <%= image_tag 'koeda.png' %>
+        <% end %>
+        <hr>      
+    <% end %>
+  <% end %>
+<% end %>
