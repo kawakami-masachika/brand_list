@@ -1,9 +1,10 @@
 
 class UsersController < ApplicationController
-  before_action :set_user , only:[:show,:edit,:update]
+  before_action :set_user , only:[:show,:edit,:update,:shops,:reviews]
 
   def show
-   @shops = @user.shops.limit(5)
+    @shops = @user.shops.limit(5)
+    @reviews = @user.reviews
   end 
 
   def edit
@@ -26,6 +27,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def shops
+    @shops = Shop.where(user_id: @user.id).page(params[:page]).per(8)
+  end
+  
+  def reviews
+    @reviews = Review.where(user_id: current_user.id).page(params[:page]).per(10)
+  
+    #@reviews.page(params[:page]).per(3)
+  end
 
 
   private
