@@ -11,7 +11,12 @@ Rails.application.routes.draw do
 
   #root to:'users#index'
   root to:'shops#index'
-  resources :users, only: [:show,:index,:edit,:update]
+  resources :users, only: [:show,:index,:edit,:update] do
+    member do 
+      get :shops 
+      get :reviews
+    end
+  end
   resources :shops do
     collection do
       get 'search'
