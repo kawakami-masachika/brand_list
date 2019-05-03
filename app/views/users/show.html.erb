@@ -16,7 +16,7 @@
 
 <p><span><%=@user.name %> :投稿ショップ一覧</span></p>
 
-<% @user.shops.each do |shop|%>
+<% @shops.limit(5).each do |shop|%>
   <strong><%= shop.name%></strong><br>
   <%= link_to shop_path(shop.id) do %>
     <% if shop.images? %>
@@ -27,10 +27,11 @@
   <% end %>
   <hr> 
 <% end %>
+<%= link_to "すべて見る(#{@shops.all.count})", shops_user_path(@user.id)%>
 
 <strong><hr></strong>
 <p><span>レビュー一覧</span></p>
-<% @user.reviews.each do |user_review| %>
+<% @reviews.each do |user_review| %>
   <%=link_to shop_path(user_review.shop_id) do %>
     <p><%= user_review.title %>:</p>
     <% end %>
@@ -38,3 +39,5 @@
     <br>
 <% end %>
 
+
+<%= link_to "すべて見る(#{@reviews.all.count})" , reviews_user_path(@user.id)%>
