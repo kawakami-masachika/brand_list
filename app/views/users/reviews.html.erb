@@ -1,0 +1,12 @@
+<h1>User#reviws</h1>
+<h3>ユーザーが投稿したreview一覧を表示させます。</h3>
+
+<% @reviews.each do |review|%> 
+  <%= link_to shop_path(review.shop_id) do %>
+    <p><%= review.title %></p>
+  <% end %>
+    <p><%= review.comment.truncate(100) %></p>
+  <hr>
+<% end %>
+
+<%= paginate @reviews %>
