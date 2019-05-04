@@ -55,7 +55,7 @@
   <% end %>
   <hr>
 <% end %>
-<%= link_to 'すべて見る', shop_reviews_path(@shop.id) %>
+<%= link_to "すべて見る(#{@shop.reviews.count})", shop_reviews_path(@shop.id) %>
 <br>
 
 
