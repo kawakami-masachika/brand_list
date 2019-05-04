@@ -57,7 +57,7 @@ class ShopsController < ApplicationController
 
   def show
       @shop = Shop.includes(:user).find(params[:id])
-      @reviews = @shop.reviews.includes(:user).all
+      @reviews = @shop.reviews.includes(:user).all.limit(3)
       #@tags = ActsAsTaggableOn::Tag.where(name: 'sample1')
       #@tags = ActsAsTaggableOn::Tag.where("(name = ? ) OR (name = ? )",'sample1','sample2')
       #@tags =  ActsAsTaggableOn::Tag.where(name: @shop.tag_list)
