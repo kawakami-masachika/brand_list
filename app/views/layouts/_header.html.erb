@@ -1,0 +1,11 @@
+<h1>ヘッダー</h1>
+<ul>
+  <li><%= link_to 'しょっぷMAP',root_path %></li>
+  <% if user_signed_in? %> 
+    <li><%= link_to 'マイページ',user_path(current_user.id) %></li>
+  <% else %>
+    <li><%= link_to 'ログイン',new_user_session_path %></li>
+  <% end %>
+  <li><%= link_to '検索',search_shops_path %></li>
+  <li><%= link_to '投稿する',new_shop_path %></li>
+</ul>
