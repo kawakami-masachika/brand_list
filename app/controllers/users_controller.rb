@@ -37,6 +37,9 @@ class UsersController < ApplicationController
   end
 
   def option
+    unless @user == current_user
+      redirect_to root_path
+    end
   end
 
 
