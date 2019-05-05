@@ -10,9 +10,7 @@
   </head>
 
   <body>
-  <div class= 'header'>
-    <%= render 'layouts/header'%>
-  </div>
+  <%= render 'layouts/header'%>
     
     <% if user_signed_in? %>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
@@ -24,7 +22,8 @@
     <% end %>
 
     <%= link_to 'タグ一覧へ',tags_path %>
-
+    
     <%= yield %>
+    <%= render 'layouts/footer'%>
   </body>
 </html>
