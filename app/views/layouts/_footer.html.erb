@@ -1,13 +1,12 @@
-
-<div class='footer'>
-  <h4>フッター</h4>
-
-  <ul>
-    <li><%= link_to 'ブランド一覧', tags_path %></li>
-    <li><%= link_to '利用規約', '/pages/rules'%></li>
-    <li><%= link_to 'プライバシーポリシー','/pages/privacy'%></li>
-    <li><%= link_to 'お問い合わせ','/pages/contact'%></li>
-  </ul>
-
-  <span>Copyright © 2019 しょっぷMAP All Rights Reserved.</span>
+<div class="footer">
+  <nav class='footer_nav'>
+    <ul>
+      <li class='f_nav_list'><%= link_to 'ブランド一覧', tags_path, class:"f_nav_menu" %></li>
+      <li class='f_nav_list'><%= link_to '利用規約', '/pages/rules',class:"f_nav_menu"%></li>
+      <li class='f_nav_list'><%= link_to 'お問い合わせ','/pages/contact',class:"f_nav_menu"%></li>
+      <li class='f_nav_list'><%= link_to 'プライバシーポリシー','/pages/privacy',class:"f_nav_menu"%></li>
+    </ul>  
+  </nav>
+  <br>
+  <p class='copy_light'>Copyright © 2019 しょっぷMAP All Rights Reserved.</p>
 </div>
