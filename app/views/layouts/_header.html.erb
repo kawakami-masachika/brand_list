@@ -1,13 +1,16 @@
 <div class='header'>
-  <h1>ヘッダー</h1>
-  <ul>
-    <li><%= link_to 'しょっぷMAP',root_path %></li>
-    <% if user_signed_in? %> 
-      <li><%= link_to 'マイページ',user_path(current_user.id) %></li>
-    <% else %>
-      <li><%= link_to 'ログイン',new_user_session_path %></li>
-    <% end %>
-    <li><%= link_to '検索',search_shops_path %></li>
-    <li><%= link_to '投稿する',new_shop_path %></li>
-  </ul>
+<h5 class="page_summary">ファッション好きによるコアなセレクトショップ情報共有サイト</h5>
+  <h2><%= link_to 'Circle',root_path,class:'title' %></h2>
+  
+  <nav>
+    <ul class='h_nav'>  
+      <% if user_signed_in? %> 
+        <li class='h_nav_list'><%= link_to 'マイページ',user_path(current_user.id),class:'h_nav_menu' %></li>
+      <% else %>
+        <li class='h_nav_list'><%= link_to 'ログイン',new_user_session_path,class:'h_nav_menu' %></li>
+      <% end %>
+      <li class='h_nav_list'><%= link_to '検索',search_shops_path,class:'h_nav_menu' %></li>
+      <li class='h_nav_list'><%= link_to '投稿する',new_shop_path,class:'h_nav_menu' %></li>
+    </ul>
+  </nav>
 </div>
