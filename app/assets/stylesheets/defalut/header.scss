@@ -1,0 +1,29 @@
+.header{
+  height: 100px;
+  background-color:black;
+}
+h2 .title{
+  color: white;
+  display:block;
+  font-size: 30px;
+  height:0;
+  font-family: sans-serif;
+  text-decoration:none;
+  padding-left:40px;
+}
+.h_nav{
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+}
+.h_nav_menu{
+  color:white;
+  text-decoration:none;
+  padding-right:5px; 
+  }
+.page_summary{
+  background-color:gray; 
+  color: white;
+  padding: 5px; 
+  padding-left: 30px;
+}

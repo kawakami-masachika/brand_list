@@ -1,0 +1,28 @@
+.footer{
+  height: 105px;
+  background-color:black;
+}
+.f_nav_list{
+  padding-left:120px; 
+  padding-top:30px;
+  padding-bottom: 10px;
+}
+nav li{
+  float: left;
+  list-style:none;
+  margin-left: 20px;
+}
+.f_nav_menu{
+  color: white;
+  text-decoration:none;
+  font-style: italic;
+  border-left:1px solid white; 
+}
+.copy_light{
+  padding-top:30px; 
+  margin-top:20px;
+  padding-left: 10px;
+  color: white;
+  font-size:12px; 
+  text-align: left;
+}
