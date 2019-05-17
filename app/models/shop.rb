@@ -1,6 +1,6 @@
 class Shop < ApplicationRecord
   belongs_to :user
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
   #acts_as_taggable
   #下記に変更
   acts_as_taggable_on :brand
