@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_action :set_user , only:[:show,:edit,:update,:shops,:reviews,:option]
 
   def show
-    @shops = @user.shops.limit(5)
+    @shops = @user.shops
     @reviews = @user.reviews
   end 
 

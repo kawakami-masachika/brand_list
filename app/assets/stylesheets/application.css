@@ -14,3 +14,5 @@
 @import 'defalut/footer';
 @import 'defalut/header';
 
+
+@import 'user/show.scss';
