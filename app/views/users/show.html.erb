@@ -1,44 +1,59 @@
-
-<p>マイページ</p>
-<ul>
-  <li>名前:<%= @user.name %></li>
-  <li>年齢:<%= @user.age %>歳</li>
-  <li>性別:<%= @user.sex %></li>
-  <% if  @user.fav_brand.nil? %>
-    <li>お気に入りブランド:なし</li>
-  <% else %>
-    <li>お気に入りブランド:<%= @user.fav_brand %></li>
+<%= stylesheet_link_tag    'user/show', media: 'all', 'data-turbolinks-track': 'reload' %>
+<h2 class="user_page_title">My Page</h2>
+<div class="option_btn">
+  <% if @user == current_user %>
+    <%= link_to 'Option', option_user_path(@user.id)%>
   <% end %>
-</ul>
-
-<% if @user == current_user %>
-  <%= link_to 'Option', option_user_path(@user.id) %>
-<% end %>
-
-<p><span><%=@user.name %> :投稿ショップ一覧</span></p>
-
-<% @shops.limit(5).each do |shop|%>
-  <strong><%= shop.name%></strong><br>
-  <%= link_to shop_path(shop.id) do %>
-    <% if shop.images? %>
-      <%= image_tag shop.images.thumb.url %>
+</div>
+<hr>
+<div class='user_info'>
+  <h3 class="user_info_label">User Information</h3>
+  <ul>
+    <li class="user_info_list"><%= @user.name %></li>
+    <li class="user_info_list"><%= @user.age %>歳</li>
+    <li class="user_info_list"><%= @user.sex %></li>
+    <p class="user_fav_brand_label">■お気に入りブランド</p>
+    <% if  @user.fav_brand.nil? %>
+      <li class="user_info_list">なし</li>
     <% else %>
-      <%= image_tag 'koeda.png' %>
+      <li  class="user_info_list"><%= @user.fav_brand %></li>
     <% end %>
-  <% end %>
-  <hr> 
-<% end %>
-<%= link_to "すべて見る(#{@shops.all.count})", shops_user_path(@user.id)%>
+  </ul>
+</div>
+
+  <p class='my_shops_title'>Post Shops</p>
+  <hr>
+  <div class="shops_content">
+    <% @shops.limit(10).each do |shop|%>
+      <div class="shops_label">
+        <%= link_to shop_path(shop.id) do %>
+          <% if shop.images? %>
+            <%= image_tag shop.images.thumb.url ,class:'shop_image'%>
+          <% else %>
+            <%= image_tag 'koeda.png' %>
+          <% end %>
+          <div class="shop_info">
+            <p class="shop_name"><%= shop.name %></p>
+          </div>        
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <%= link_to "すべて見る(#{@shops.size})", shops_user_path(@user.id),class:'all_post_shops'%>
+
 
 <strong><hr></strong>
-<p><span>レビュー一覧</span></p>
-<% @reviews.each do |user_review| %>
-  <%=link_to shop_path(user_review.shop_id) do %>
-    <p><%= user_review.title %>:</p>
-    <% end %>
-    <p><%= user_review.comment %></p>
-    <br>
-<% end %>
-
-
-<%= link_to "すべて見る(#{@reviews.all.count})" , reviews_user_path(@user.id)%>
+<p class="my_reviews_title">Post Reviews</p>
+<div class="my_post_reviews">
+  <% @reviews.limit(5).each do |user_review| %>
+    <div class="reviews">
+      <%=link_to shop_path(user_review.shop_id), class: "review" do %>
+        <div class='review_title'><%= user_review.title %></div>
+        <div class="review_comment"><%= user_review.comment.truncate(135) %></div>
+        <div class="review_time"><%= user_review.created_at.strftime('%Y/%m/%d')%></div>
+        <br>
+      <% end %>
+    </div>
+  <% end %>
+<div>
+<%= link_to "すべて見る(#{@reviews.count})" , reviews_user_path(@user.id),class:'all_post_reviews'%>
