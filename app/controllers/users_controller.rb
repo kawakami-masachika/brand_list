@@ -17,9 +17,11 @@ class UsersController < ApplicationController
   def update
     @user.join_fav_brands(params[:user][:fav_brand_1], params[:user][:fav_brand_2], params[:user][:fav_brand_3])
     if @user.update(user_params)
-      redirect_to @user, flash[:notice] = 'ユーザー情報の編集をしました'
+      redirect_to @user
+      flash[:notice] = 'ユーザー情報の編集をしました'
     else
-      flash.now[:alert] = 'ユーザー情報を編集できませんでした', render :edit
+      render :edit
+      flash.now[:alert] = 'ユーザー情報を編集できませんでした'
     end
   end
 

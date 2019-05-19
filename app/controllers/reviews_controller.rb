@@ -29,9 +29,11 @@ class ReviewsController < ApplicationController
   def update
     @shop = @review.shop
     if @review.update(review_params)
-      redirect_to @shop, flash[:notice] =  "レビューを編集しました"
+      redirect_to @shop
+      flash[:notice] =  "レビューを編集しました"
     else
-      render :edit, flash[:alert] = "レビューの編集に失敗しました"
+      render :edit
+      flash[:alert] = "レビューの編集に失敗しました"
     end
   end
 
