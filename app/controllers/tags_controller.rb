@@ -1,5 +1,5 @@
 class TagsController < ApplicationController
-  
+
   def index
     @brands = ActsAsTaggableOn::Tag.all
   end
@@ -14,6 +14,5 @@ class TagsController < ApplicationController
     @brand.destroy
     redirect_to action: 'index'
   end
-
 
 end

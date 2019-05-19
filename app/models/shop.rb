@@ -10,10 +10,10 @@ class Shop < ApplicationRecord
   #has_many :review_users, through: :reviews, source: :user
   mount_uploader :images, ImagesUploader
 
+  # ショップの検索
   def self.serach(name)
-    return Shop.all unless name 
+    return Shop.all unless name
     Shop.tagged_with([name], :any => true)
-  end  
+  end
 
 end
-
