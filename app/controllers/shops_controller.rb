@@ -18,7 +18,8 @@ class ShopsController < ApplicationController
     @shop = Shop.new(shop_params)
     @shop.user_id = current_user.id
     if @shop.save
-      redirect_to action: 'index', flash[:notice] = "ショップ情報を投稿しました"
+      redirect_to action: 'index'
+      flash[:notice] = "ショップ情報を投稿しました"
     else
       render :new
     end
@@ -29,9 +30,11 @@ class ShopsController < ApplicationController
 
   def update
     if @shop.update(shop_params)
-      redirect_to action: 'show', flash[:norice] = "ショップ情報を編集しました"
+      redirect_to action: 'show' 
+      flash[:norice] = "ショップ情報を編集しました"
     else
-      render :edit, flash[:alert] = "ショップ情報の編集に失敗しました"
+      render :edit
+      flash[:alert] = "ショップ情報の編集に失敗しました"
     end
   end
 
