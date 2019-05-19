@@ -16,3 +16,22 @@
 
 
 @import 'user/show.scss';
+@import 'user/option.scss';
+
+
+li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+  color:#2c2c2c;
+}
+
+.page_title, .title{
+  font-weight: bold;
+  font-size: 40px;
+  font-style: oblique; 
+  margin: 5px;
+  text-shadow: 2px 3px 1px #999999;
+}
+
