@@ -1,5 +1,5 @@
 <%= stylesheet_link_tag    'user/show', media: 'all', 'data-turbolinks-track': 'reload' %>
-<h2 class="user_page_title">My Page</h2>
+<h2 class="page_title">My Page</h2>
 <div class="option_btn">
   <% if @user == current_user %>
     <%= link_to 'Option', option_user_path(@user.id)%>
@@ -21,7 +21,7 @@
   </ul>
 </div>
 
-  <p class='my_shops_title'>Post Shops</p>
+  <p class='title'>Post Shops</p>
   <hr>
   <div class="shops_content">
     <% @shops.limit(10).each do |shop|%>
@@ -43,7 +43,7 @@
 
 
 <strong><hr></strong>
-<p class="my_reviews_title">Post Reviews</p>
+<p class="title">Post Reviews</p>
 <div class="my_post_reviews">
   <% @reviews.limit(5).each do |user_review| %>
     <div class="reviews">
