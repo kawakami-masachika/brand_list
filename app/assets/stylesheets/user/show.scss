@@ -1,11 +1,3 @@
-.user_page_title, .my_shops_title ,.my_reviews_title{
-  //text-align: center;
-  font-weight: bold;
-  font-size: 40px;
-  font-style: oblique; 
-  margin: 5px;
-  text-shadow: 3px 3px 1px #999999;
-}
 .user_info_label{
   font-weight: bold;
   font-size: 20px;
@@ -21,7 +13,7 @@
   color:#696969;
   padding: 5px;
   background-color:#000000; 
-  text-decoration: none;
+  //text-decoration: none;
   font-size:18px;
   font-weight: bold;
   font-style: oblique;
@@ -61,7 +53,7 @@ div{
   display: inline-block;
   margin-top:0;
   color: black; 
-  text-decoration: none;
+  //text-decoration: none;
 }
 .shop_image{
   padding-top:0; 
@@ -73,7 +65,7 @@ div{
   color: #696969;
   text-align: right;
   margin-right:5px;
-  text-decoration: none;
+  //text-decoration: none;
 
 }
 .my_post_reviews{
@@ -81,7 +73,7 @@ div{
   
 }
 .review{
-  text-decoration: none;
+  //text-decoration: none;
   color: black;
 }
 .review_title{

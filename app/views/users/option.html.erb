@@ -1,8 +1,25 @@
-<h2>Users#option</h2>
+<%= stylesheet_link_tag    'user/option', media: 'all', 'data-turbolinks-track': 'reload' %>
 
-<ul>
-  <li><%= link_to 'プロフィールの編集',edit_user_path(@user.id)%></li>
-  <li><%= link_to '利用規約', '/pages/rules' %></li>
-  <li><%= link_to 'お問い合わせ', '/pages/contact'%></li>
-  <li><%= link_to 'プライバシーポリシー', '/pages/privacy'%></li>
-</ul>
+<div class="option_page">
+  <div class="option_content">
+    <div class="page_title option_page_title">
+        <h3>Option</h3>
+    </div>
+    <ul>
+      <div class="option_list">
+        <div class="option_menu">
+          <li><%= link_to 'プロフィールの編集',edit_user_path(@user.id)%></li>
+        </div>
+        <div class="option_menu">
+          <li><%= link_to '利用規約', '/pages/rules' %></li>
+        </div>
+        <div class="option_menu">
+          <li><%= link_to 'お問い合わせ', '/pages/contact'%></li>
+        </div>
+        <div class="option_menu">
+          <li><%= link_to 'プライバシーポリシー', '/pages/privacy'%></li>
+        </div>
+      </div>
+    </ul>
+  </div>
+</div>
