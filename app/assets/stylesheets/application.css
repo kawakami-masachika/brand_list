@@ -35,3 +35,23 @@ a{
   text-shadow: 2px 3px 1px #999999;
 }
 
+/*フォームのボタン関連*/
+input[type="submit"]{
+  display: inline-block;
+  padding: 8px 105px;
+  border-radius: 5px;
+  background: #474747;
+  font-size: 15px;
+  color: #efefef;
+  font-family: 'Courier New', Courier, monospace
+}
+input[type="submit"]:hover{
+  background: #050505;
+}
+/*プロフィール編集後 アラート*/
+.alert{
+  text-align: center;
+  font: bold;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background: #6dc4ff
+}

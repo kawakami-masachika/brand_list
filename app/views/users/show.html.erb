@@ -1,4 +1,5 @@
 <%= stylesheet_link_tag    'user/show', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= render 'layouts/flash'%>
 <h2 class="page_title">My Page</h2>
 <div class="option_btn">
   <% if @user == current_user %>

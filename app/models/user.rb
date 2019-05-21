@@ -24,11 +24,11 @@ class User < ApplicationRecord
   end
 
   def join_fav_brands(fav_brand_1, fav_brand_2, fav_brand_3)
-    self.fav_brand = if fav_brand_1.blank? && fav_brand_2.blank? && fav_brand_3.blank?
-                       nil
-                     else
-                       fav_brand_1 + ' ' + fav_brand_2 + ' ' + fav_brand_3
-                     end
+    self.fav_brand =  if fav_brand_1.blank? && fav_brand_2.blank? && fav_brand_3.blank?
+                        nil
+                      else
+                        fav_brand_1 + ' ' + fav_brand_2 + ' ' + fav_brand_3
+                      end
   end
 
 end

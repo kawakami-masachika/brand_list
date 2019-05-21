@@ -1,6 +1,4 @@
-
-<%= render 'layouts/flash'%>
-
+<%= stylesheet_link_tag    'user/edit', media: 'all', 'data-turbolinks-track': 'reload' %>
 <% if @user.errors.any? %>
   <div id="error_explanation" class="alert alert-danger">
     <ul>
@@ -10,36 +8,55 @@
     </ul>
   </div>
 <% end %>
-
-
-
-<%= form_for @user do |f|%>
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+<div class="edit_page">
+  <div class='form edit_form'>
+    <div class="form_title">
+      <h3>編集</h3>
+    </div>
+    <hr>
+    <%= form_for @user do |f|%>
+      <div class="field">
+        <div class='field_label'>
+          <%= f.label :name %><br />
+        </div>
+        <div class='field_area'>
+          <%= f.text_field :name, autofocus: true , autocomplete: "name" , class:'text_area'%>
+        </div>
+      </div>
+      <div class="field">
+        <div class='field_label'>
+          <%= f.label :age %><br />
+        </div>
+        <div class='field_area'>
+          <%= f.number_field :age, autofocus: true , class:'text_area' %>
+        </div>
+      </div>
+      <div class='radio_btn_gruop'>
+        <div class='field_label'>
+          <%= f.label :sex %><br />
+        </div>
+        <label><%= f.radio_button :sex, "男" %> 男</label>
+        <label><%= f.radio_button :sex, "女" %> 女</label>
+      </div>
+        <div class="field">
+          <div class='field_label'>
+            <%= f.label :fav_brand %>
+          </div>
+          <div class="field_area">
+            <%= f.text_field :fav_brand_1, value: @fav_brands[0], class:'text_area' %>
+          </div>
+        </div>
+        <div class="field">
+          <div class="field_area">
+            <%= f.text_field :fav_brand_2, value: @fav_brands[1], class:'text_area' %>
+          </div>
+        </div>
+        <div class="field">
+          <div class="field_area">
+            <%= f.text_field :fav_brand_3, value: @fav_brands[2], class:'text_area' %>
+          </div>
+        </div>
+      <P class="form_btn update_btn"><%= f.submit "更新" %><p>
+    <% end %>
   </div>
-
-  <div class="field">
-    <%= f.label :age %><br />
-    <%= f.number_field :age, autofocus: true %>
-  </div>
-  <label><%= f.radio_button :sex, "男" %> 男</label>
-  <label><%= f.radio_button :sex, "女" %> 女</label>
-
-  
-
-    <div class="field">
-      <%= f.label :fav_brand %><br />
-      <%= f.text_field :fav_brand_1, value: @fav_brands[0], autofocus: true, autocomplete: "fav_brand" %>
-    </div>
-
-    <div class="field">
-      <%= f.text_field :fav_brand_2, value: @fav_brands[1], autofocus: true, autocomplete: "fav_brand" %>
-    </div>
-
-    <div class="field">
-      <%= f.text_field :fav_brand_3, value: @fav_brands[2], autofocus: true, autocomplete: "fav_brand" %>
-    </div>
-
-<%= f.submit "更新" %>
-<% end %>
+</div>
