@@ -1,0 +1,39 @@
+.edit_page{
+  text-align: center;
+}
+.form{
+  border: 3px solid #efefef;
+  border-radius: 5px;
+  padding: 20px;
+}
+.edit_form{
+  display: inline-block;
+  margin: 20px;  
+  margin-left: auto;     
+}
+
+.field_label{
+  text-align: left;
+  font-size:11px;
+}
+.field_area{
+  text-align: left;
+  margin: 5px 0;
+}
+.text_area{
+  height: 20px ;
+  width:97%;
+}
+.radio_btn_gruop{
+  text-align:left;
+  margin-bottom: 3px; 
+}
+
+label + input[type="radio"],
+label + label {
+    margin-left: 3em;
+}
+
+.form_title{
+  text-align: left;
+}
