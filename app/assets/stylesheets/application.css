@@ -55,3 +55,35 @@ input[type="submit"]:hover{
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   background: #6dc4ff
 }
+/*トップページ画像 */
+.site_image{
+  width:100%;
+  max-width: 100%;
+  height: auto;
+}
+
+
+.site_map {
+  position: relative;/*相対配置*/
+  }
+
+  .site_map a {
+  position: absolute;/*絶対配置*/
+  text-align: center;
+  font-size: 40px;
+  width: 100%;
+  left: 0; 
+  top: calc(50% - 25px); 
+  text-align: center; 
+  font-weight: bold; 
+  font-size: 50px;
+  line-height: 50px;
+  color: #efefef;
+  font-style:oblique;
+  font-family: 'Plantagenet Cherokee';
+  }
+
+  .site_map a:hover {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
