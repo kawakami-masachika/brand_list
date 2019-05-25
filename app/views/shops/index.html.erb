@@ -1,5 +1,13 @@
-<h1>SHOP#index</h1>
 <%= render 'layouts/flash'%>
+<div class="site_map">
+  <%= image_tag("top_page_image",:class => "site_image") %>
+  
+  <% if user_signed_in? %>
+    <%=link_to 'Let\'s share recommended shops' ,new_shop_path %>
+  <% else %>
+    <%=link_to 'Let\'s share recommended shops' ,new_user_registration_path %>
+  <% end %>
+</div>
 <% @shops.each do |shop|%>
   <%= shop.name %>
     <%= link_to shop_path(shop.id) do %>
