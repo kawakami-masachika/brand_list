@@ -18,6 +18,7 @@
 @import 'user/show.scss';
 @import 'user/option.scss';
 
+@import 'shop/form.scss';
 
 li{
   list-style: none;
@@ -72,11 +73,8 @@ input[type="submit"]:hover{
   text-align: center;
   font-size: 40px;
   width: 100%;
-  left: 0; 
-  top: calc(50% - 25px); 
-  text-align: center; 
+  top: calc(50% - 25px);
   font-weight: bold; 
-  font-size: 50px;
   line-height: 50px;
   color: #efefef;
   font-style:oblique;
@@ -87,3 +85,31 @@ input[type="submit"]:hover{
     opacity: 0.8;
     transform: scale(1.1);
   }
+
+/*以下 全登録フォーム共通CSS*/
+.form{
+  border: 10px solid #efefef;
+  border-radius: 3px;
+  padding: 0 150px 30px 150px;
+  margin: 60px 0;
+}
+.field_label{
+  text-align: left;
+  font-size:11px;
+}
+.field_area{
+  text-align: left;
+  margin: 5px 0;
+}
+.text_area{
+  height: 20px ;
+  width:97%;
+
+}
+
+textarea{
+  width:100%;
+  resize: none;
+  border:1px solid #d3d3d3;
+  border-radius:2px; 
+}
