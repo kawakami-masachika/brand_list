@@ -20,7 +20,7 @@
           <%= f.label :name %><br />
         </div>
         <div class='field_area'>
-          <%= f.text_field :name, autofocus: true , autocomplete: "name" , class:'text_area'%>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", required: true, class:'text_area'%>
         </div>
       </div>
       <div class="field">
@@ -28,7 +28,7 @@
           <%= f.label :age %><br />
         </div>
         <div class='field_area'>
-          <%= f.number_field :age, autofocus: true , class:'text_area' %>
+          <%= f.number_field :age, autofocus: true, required: true, class:'text_area' %>
         </div>
       </div>
       <div class='radio_btn_gruop'>
