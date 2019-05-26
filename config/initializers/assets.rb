@@ -18,3 +18,6 @@ Rails.application.config.assets.precompile += %w( footer.scss )
 Rails.application.config.assets.precompile += %w( user/show.scss )
 Rails.application.config.assets.precompile += %w( user/edit.scss )
 Rails.application.config.assets.precompile += %w( user/option.scss )
+
+#以下Shopモデル CSS
+Rails.application.config.assets.precompile += %w( shop/form.css )

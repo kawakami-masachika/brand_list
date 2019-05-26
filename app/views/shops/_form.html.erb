@@ -1,55 +1,100 @@
-<p><span>SHOP INFOMATION</span></p>
+<div class="form_page">
+  <div class="form shop_form">
+    <div class="form_title">
+      <% if request.path_info == new_shop_path %>
+        <h3>POST SHOP</h3>
+      <% else %>
+        <h3>UPDATE SHOP</h3>
+      <% end %>
+    </div>
+    <%= form_for(shop) do |f| %>
+      <div class="field">
+        <div class="field_label">
+          <%= f.label :name %>
+        </div>
+        <div class="field_area">
+          <%= f.text_field :name %>
+        </div>
+      </div>
 
-<%= form_for(shop) do |f| %>
-  <div>
-    <%= f.label :name %> <br>
-    <%= f.text_field :name %>
-  </div>
+      <div class="field">
+        <div class="field_label">
+          <%= f.label :address %>
+        </div>
+        <div class='field_area'>
+          <%= f.text_field :address %>
+        </div>
+      </div>
 
-  <div>
-    <%= f.label :address %> <br>
-    <%= f.text_field :address %>
-  </div>
+      <div class="field">
+        <div class="field_label">
+          <%= f.label :business_period %>
+        </div>
+        <div class='field_area'>
+          <%= f.text_field :business_period %>
+        </div>
+      </div>
 
-  <div>
-    <%= f.label :business_period %> <br>
-    <%= f.text_field :business_period %>
-  </div>
+      <div class="field">
+        <div class="field_label">
+          <%= f.label :staition %>
+        </div>
+        <div class="field_area">
+          <%= f.text_field :staition %>
+        </div>
+      </div>
 
-  <div>
-    <%= f.label :staition %> <br>
-    <%= f.text_field :staition %>
-  </div>
+      <div class="field">
+        <div class="field_label">
+          <%= f.label :tel %>
+        </div>
+        <div class="field_area">
+          <%= f.text_field :tel %>
+        </div>
+      </div>
 
-  <div>
-    <%= f.label :tel %> <br>
-    <%= f.text_field :tel %>
-  </div>
+      <div class="field">
+        <div class="field_label">
+          <%= f.label :url %>
+        </div>
+        <div class="field_area" >
+          <%= f.text_field :url %>
+        </div>
+      </div>
 
-  <div>
-    <%= f.label :url %> <br>
-    <%= f.text_field :url %>
-  </div>
+      <div class="field">
+        <div class="field_label">
+          <%= f.label :information %>
+        </div>
+        <div class="field_area">
+          <%= f.text_area :information, rows: "5"%>
+        </div>
+      </div>
 
-  <div>
-    <%= f.label :information %> <br>
-    <%= f.text_area :information %>
+      <div class="field">
+        <div class="field_label">
+          <%= f.label :images %>
+        </div>
+        <div class="field_area image_field">
+          <%= image_tag("material/material_01.png") %>
+          <p class="image_field_title">写真を選択</p>
+          <%= f.file_field :images %>
+        </div>
+      </div>
+      <div class="field">
+        <div class="field_label">
+          タグ
+        </div>
+        <div class="field_area">
+          <%= text_area_tag 'shop[brand_list]', shop.brand_list.join(","), class: "form-control",rows:"3" %>
+        </div>
+      </div>
+      <br>
+      <% if request.path_info == new_shop_path  %>
+        <%= f.submit '登録' %>
+      <% else %>
+        <%= f.submit '更新' %>
+      <% end %>
+    <% end %>
   </div>
-
-  <div>
-    <%= f.label :images %> <br>
-    <%= f.file_field :images %>
-  </div>
-  
-<br>
-  <div>
-    <p>タグ</p>
-    <%= text_field_tag 'shop[brand_list]', shop.brand_list.join(","), class: "form-control" %>
-  </div>
-
-  <% if request.path_info == new_shop_path  %>
-    <%= f.submit '登録' %>
-  <% else %>
-    <%= f.submit '更新' %>
-  <% end %>
-<% end %>
+</div>
