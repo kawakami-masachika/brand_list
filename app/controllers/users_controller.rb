@@ -7,11 +7,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @fav_brands = if @user.fav_brand?
-                    @user.fav_brand.split(' ')
-                  else
-                    []
-                  end
+    set_fav_brand
   end
 
   def update
@@ -20,6 +16,7 @@ class UsersController < ApplicationController
       redirect_to @user
       flash[:notice] = 'ユーザー情報の編集をしました'
     else
+      set_fav_brand
       render :edit
       flash.now[:alert] = 'ユーザー情報を編集できませんでした'
     end
@@ -41,6 +38,14 @@ class UsersController < ApplicationController
 
 
   private
+  
+  def set_fav_brand
+              @fav_brands = if @user.fav_brand?
+                    @user.fav_brand.split(' ')
+                  else
+                    []
+                  end
+  end
 
   def set_user
     @user = User.find(params[:id])

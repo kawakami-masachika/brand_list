@@ -1,0 +1,69 @@
+<div class="shop_content_view">
+  <% if @shop.images? %>
+    <%= image_tag @shop.images_url %>
+  <% else %>
+    <%= image_tag 'koeda.png' %>
+  <% end %>
+</div>
+<div class="shop_content_info">
+  <h3 class="shop_content_title">INFORMATION</h3>
+  <%= link_to '編集する', edit_shop_path(@shop.id), class:"btn"%>
+    <% if @shop.user_id == current_user.id %>
+      <%= link_to '削除する', shop_path(@shop.id), method: :delete, class:"btn" %>
+    <% end %>
+    <div class="shop_item">
+    <div class="shop_item_title">ショップ名</div>
+      <% if @shop.name?%>
+        <%= @shop.name %>
+      <% else %>
+        <p> ― </p>
+      <% end %>
+    </div>
+    <div class="line"></div>
+    <div class="shop_item">
+      <div class="shop_item_title">住所</div>
+      <% if @shop.address?%>
+        <%= @shop.address %>
+      <% else %>
+        <span>ー</span>
+      <% end %>
+    </div>
+    <div class="line"></div>
+    <div class="shop_item">
+      <div class="shop_item_title">電話番号</div>
+      <% if @shop.tel? %>
+        <%= @shop.tel %>
+      <% else %>
+        <span>ー</span>
+      <% end %>
+    </div>
+    <div class="line"></div>
+    <div class="shop_item">
+      <div class="shop_item_title">営業時間・定休日</div>
+      <% if @shop.business_period? %>
+        <%= @shop.business_period %>
+      <% else %>
+        <span>ー</span>
+      <% end %>
+    </div>
+    <div class="line"></div>
+    <div class="shop_item">
+      <div class="shop_item_title">おすすめポイント</div>
+      <% if @shop.information? %>
+        <%= @shop.information %>
+      <% else %>
+        <span>ー</span>
+      <% end %>
+    </div>
+  </div>
+  <div class="shop_brand_info">
+    <h3>取扱いブランド</h3>
+    <div class="line"></div>
+    <% @brands.each do |brand|%>
+      <div class="shop_brand btn">
+        <%= link_to tag_path(brand.id) do %>
+          <div class="shop_brand_item"><%= brand.name %></div>
+        <% end %>
+      </div>
+    <% end %>
+</div>
