@@ -1,65 +1,31 @@
-<h1>show # shop</h1>
 <%= render 'layouts/flash'%>
-
-<% if @shop.images? %>
-  <%= image_tag @shop.images_url %>
-<% else %>
-  <%= image_tag 'koeda.png' %>
-<% end %>
-<ul>
-  <li> 
-    <%= @shop.name %>
-  </li>
-  <li>
-    <%= @shop.address %>
-  </li>
-  <li>
-    <%= @shop.tel %>
-  </li>
-  <li>
-    <%= @shop.business_period %>
-  </li>
-  <li>
-    <%= @shop.information %>
-  </li>
-</ul>
-
-  <h3>タグ</h3>
-  <% @brands.each do |brand|%>
-    <ul>
-      <%= link_to tag_path(brand.id) do %>
-        <li><%= brand.name %></li>
+<div class="shop_content">
+  <div class="shop_content_main">
+      <%= render 'shops/shop'%>
+      <div class='shop_review'>
+        <h3>口コミ</h3>
+        <div class="line"></div>
+        <% @reviews.limit(5).each do |review|%>
+          <div class="shop_review_content">
+            <%= link_to user_path(review.user_id) do %>
+              <div class='review_title'><%= review.title %></div>
+            <% end %>
+            <% if review.user_id == current_user.id %>
+              <%= link_to '編集', edit_shop_review_path(@shop.id,review.id),class:'btn'%>
+              <%= link_to '削除', shop_review_path(@shop.id,review.id),method: :delete,class:'btn' %>
+            <% end %>
+            <%= link_to shop_review_path(@shop.id,review.id) do %>
+              <div class="review_comment"><%= review.comment.truncate(135) %></div>
+            <% end %>
+          <div class="review_time"><%= review.created_at.strftime('%Y/%m/%d')%></div>
+        </div>      
       <% end %>
-    </ul>
-
-  <% end %>
-
-<h3>レビュー 一覧</h3>
-<% @reviews.each do |review|%>
-  <em>ユーザー名</em>
-  <%= link_to user_path(review.user_id) do %>
-    <%= review.user.name if review.user %><br>
-  <% end %>
-  <span>タイトル:</span>
-  <%= review.title %><br>
-  <span>コメント:</span>
-  <%= review.comment %>
-  <br>
-  <%= link_to '全文見る',shop_review_path(@shop.id,review.id)%>
+      <%= link_to "すべて見る(#{@shop.reviews.count})", shop_reviews_path(@shop.id), class:'all_post_reviews'%>
+    </div>
+    <br>
+    <%= link_to 'コメントをする', new_shop_review_path(@shop.id) %>
+  </div>
+</div>
 
 
 
-  <% if review.user_id == current_user.id %>
-    <%= link_to '編集', edit_shop_review_path(@shop.id,review.id) %>
-    <%= link_to '削除', shop_review_path(@shop.id,review.id),method: :delete %>
-  <% end %>
-  <hr>
-<% end %>
-<%= link_to "すべて見る(#{@shop.reviews.count})", shop_reviews_path(@shop.id) %>
-<br>
-
-
-
-<%= link_to 'コメントをする', new_shop_review_path(@shop.id) %>
-<%= link_to '編集する', edit_shop_path(@shop.id)%>
-<%= link_to '削除する', shop_path(@shop.id), method: :delete%>
