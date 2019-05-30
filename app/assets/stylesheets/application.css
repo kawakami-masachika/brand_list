@@ -179,3 +179,8 @@ textarea{
     display: inline-block;
     width: 89%;
   }
+
+  .review_pagenate{
+    width: 80%;
+    text-align: right;
+  }
