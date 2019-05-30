@@ -4,7 +4,8 @@ class ReviewsController < ApplicationController
 
   def index
     @shop = Shop.find(params[:shop_id])
-    @reviews = Review.page(params[:page]).per(10)
+    @brands = ActsAsTaggableOn::Tag.where(name: @shop.brand_list)
+    @reviews = Review.where(shop_id: @shop.id).page(params[:page]).per(5)
   end
 
   def new
@@ -39,6 +40,7 @@ class ReviewsController < ApplicationController
 
   def show
     @shop = Shop.find(params[:shop_id])
+    @brands = ActsAsTaggableOn::Tag.where(name: @shop.brand_list)
   end
 
   def destroy
