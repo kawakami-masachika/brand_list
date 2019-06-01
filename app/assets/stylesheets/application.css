@@ -19,6 +19,7 @@
 @import 'user/option.scss';
 
 @import 'shop/form.scss';
+@import 'reviews.scss';
 
 li{
   list-style: none;
@@ -179,7 +180,9 @@ textarea{
     display: inline-block;
     width: 89%;
   }
-
+  .review_comment{
+    width: 88%;
+  }
   .review_pagenate{
     width: 80%;
     text-align: right;
