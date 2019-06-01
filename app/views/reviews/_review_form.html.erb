@@ -1,14 +1,31 @@
-
-<%= form_for [@shop,@review] do |f| %>
-  <div>
-  <%= f.label :title %><br>
-  <%= f.text_field :title %>
+<div class="form_page">
+  <div class="form review_form">
+    <div class="form_title">
+      <% if request.path_info == new_shop_review_path %>
+        <h3>POST REVIEW</h3>
+      <% else %>
+        <h3>UPDATE REVIEW</h3>
+      <% end %>
+    </div>
+    <%= form_for [@shop,@review] do |f| %>
+      <div class="field">
+        <div class="field_label">
+          <%= f.label :title %>
+        </div>
+        <div class="field_area">
+          <%= f.text_field :title %>
+        </div>  
+      </div>
+      
+      <div class="field">
+        <div class="field_label">
+          <%= f.label :comment %>
+        </div>
+        <div class="field_area">
+          <%= f.text_area :comment ,rows:"10"  %>
+        </div>
+      </div>
+      <%= f.submit '投稿する'%>
+    <% end %>
   </div>
-  
-  <div>
-  <%= f.label :comment %><br>
-  <%= f.text_area :comment %>
-  </div>
-  <%= f.submit '投稿する'%>
-
-<% end %>
+</div>
