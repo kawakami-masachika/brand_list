@@ -8,15 +8,19 @@
     <%=link_to 'Let\'s share recommended shops' ,new_user_registration_path %>
   <% end %>
 </div>
-<% @shops.each do |shop|%>
-  <%= shop.name %>
-    <%= link_to shop_path(shop.id) do %>
-      <% if shop.images? %>
-        <%= image_tag shop.images_url %>
-      <% else %>
-        <%= image_tag 'koeda.png' %>
+<div class="shop_content">
+  <% @shops.each do |shop|%>
+    <div class="shops_label">
+      <%= link_to shop_path(shop.id) do %>
+        <% if shop.images? %>
+          <%= image_tag shop.images.thumb.url %>
+        <% else %>
+          <%= image_tag 'koeda.png' %>
+        <% end %>
+        <div class="shop_info">
+          <p class="shop_name"><%= shop.name %></p>
+        </div>
       <% end %>
-    <% end %>
-<% end %>
-
-
+    </div>
+  <% end %>
+</div>
