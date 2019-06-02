@@ -21,3 +21,6 @@ Rails.application.config.assets.precompile += %w( user/option.scss )
 
 #以下Shopモデル CSS
 Rails.application.config.assets.precompile += %w( shop/form.css )
+
+#静的ページのCSS
+Rails.application.config.assets.precompile += %w( static.css )

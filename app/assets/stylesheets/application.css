@@ -20,9 +20,11 @@
 
 @import 'shop/form.scss';
 @import 'reviews.scss';
+@import 'static.scss';
+
 
 li{
-  list-style: none;
+  /*list-style: none; */
 }
 a{
   text-decoration: none;
@@ -187,3 +189,10 @@ textarea{
     width: 80%;
     text-align: right;
   }
+
+
+/*以下静的ページ*/
+.static_page{
+  width: 70%;
+  margin: auto;
+}
