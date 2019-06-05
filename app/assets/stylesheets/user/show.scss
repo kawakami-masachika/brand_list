@@ -1,30 +1,19 @@
 .user_info_label{
-  font-weight: bold;
   font-size: 20px;
-  font-style: oblique; 
-  margin: 5px;
-  text-shadow: 2px 1px 1px #999999;
+  margin: 3px 5px 0 0;
+  display: inline-block;
 }
 .option_btn{
-  text-align: right;
+  display: inline-block;
   margin-right: 3px;
 }
 .option_btn a{
-  color:#696969;
-  padding: 5px;
-  background-color:#000000; 
-  //text-decoration: none;
   font-size:18px;
-  font-weight: bold;
-  font-style: oblique;
-  border-radius: 3px;
-}
-.option_btn a:hover{
-  color: #ffffff;
 }
 .user_info{
+  width: 80%;
+  margin: auto;
   font-weight:bold; 
-  //text-align: center;
 }
 .user_info_list{
   list-style: none;
@@ -33,7 +22,8 @@ div{
   display: block;
 }
 .shops_content{
-  margin-left:30px; 
+  width: 80%;
+  margin: auto;
 }
 .shops_label {
   width: 250px;
@@ -43,8 +33,6 @@ div{
   border: 3px solid #ccc;
   border-radius: 10px;   
 }
-// .shops_label:nth-child(1) {
-// }
 .shop_info{
   width: 260px;
   text-align: center;
@@ -53,33 +41,23 @@ div{
   display: inline-block;
   margin-top:0;
   color: black; 
-  //text-decoration: none;
 }
 .shop_image{
   padding-top:0; 
   border-radius: 10px 10px 0 0; 
 }
-
 .all_post_shops,.all_post_reviews{
   display: block;
   color: #696969;
   text-align: right;
   margin-right:5px;
-  //text-decoration: none;
-
 }
 .my_post_reviews{
   text-align: center;
   
 }
 .review{
-  //text-decoration: none;
   color: black;
-}
-.review_title{
-  font-weight: bold;
-  font-size: 18px;
-  text-align: left;
 }
 .review_comment, .review_time{
   text-align: left;
@@ -96,7 +74,15 @@ div{
   color:#d2b48c;
   height: 5px; 
 }
-
 .user_fav_brand_label{
   margin: 0;
+}
+.user_info_lists{
+  padding: 0; 
+}
+.page_tilte{
+  padding-left: 10px;
+}
+.review_title{
+  font-weight: bold;
 }

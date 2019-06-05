@@ -1,43 +1,29 @@
 <%= stylesheet_link_tag    'user/show', media: 'all', 'data-turbolinks-track': 'reload' %>
-<%= render 'layouts/flash'%>
-<h2 class="page_title">My Page</h2>
-<div class="option_btn">
-  <% if @user == current_user %>
-    <%= link_to 'Option', option_user_path(@user.id)%>
-  <% end %>
-</div>
-<hr>
-<div class='user_info'>
-  <h3 class="user_info_label">User Information</h3>
-  <ul>
-    <li class="user_info_list"><%= @user.name %></li>
-    <li class="user_info_list"><%= @user.age %>歳</li>
-    <li class="user_info_list"><%= @user.sex %></li>
-    <p class="user_fav_brand_label">■お気に入りブランド</p>
-    <% if  @user.fav_brand.nil? %>
-      <li class="user_info_list">なし</li>
-    <% else %>
-      <li  class="user_info_list"><%= @user.fav_brand %></li>
-    <% end %>
-  </ul>
-</div>
-
-<p class='title'>Post Shops</p>
-<hr>
-<%=render 'users/user_shops'%>
-<%= link_to "すべて見る(#{@shops.size})", shops_user_path(@user.id),class:'all_post_shops'%>
-<strong><hr></strong>
-<p class="title">Post Reviews</p>
-<div class="my_post_reviews">
-  <% @reviews.limit(5).each do |user_review| %>
-    <div class="reviews">
-      <%=link_to shop_path(user_review.shop_id), class: "review" do %>
-        <div class='review_title'><%= user_review.title %></div>
-        <div class="review_comment"><%= user_review.comment.truncate(135) %></div>
-        <div class="review_time"><%= user_review.created_at.strftime('%Y/%m/%d')%></div>
-        <br>
+  <%= render 'layouts/flash'%>
+  <div class='user_info'>
+    <h3 class='user_info_label'>登録情報</h3>
+    <div class='option_btn'>
+      <% if @user == current_user %>
+        <%= link_to 'Option', option_user_path(@user.id) ,class:'btn'%>
       <% end %>
     </div>
-  <% end %>
-<div>
-<%= link_to "すべて見る(#{@reviews.count})" , reviews_user_path(@user.id),class:'all_post_reviews'%>
+    <ul class='user_info_lists'>
+      <li class='user_info_list'><%= @user.name %></li>
+      <li class='user_info_list'><%= @user.age %>歳</li>
+      <li class='user_info_list'><%= @user.sex %></li>
+      <p class='user_fav_brand_label'>■お気に入りブランド</p>
+      <% if  @user.fav_brand.nil? %>
+        <li class="user_info_list">なし</li>
+      <% else %>
+        <li  class="user_info_list"><%= @user.fav_brand %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div class='line'></div>
+  <%=render 'users/user_shops'%>
+  <%= link_to "すべて見る(#{@shops.size})", shops_user_path(@user.id),class:'all_post_shops'%>
+  <div class="line"></div>
+  <%= render 'user_reviews'%>
+  <%= link_to "すべて見る(#{@user.reviews.count})", reviews_user_path(@user.id), class:'all_post_reviews'%>
+
+    

@@ -1,0 +1,14 @@
+<div class='shop_review user_review'>
+  <h3>Post Reviews</h3>
+  <% @reviews.limit(5).each do |review|%>
+    <div class="shop_review_content">
+      <%= link_to user_path(@user,review.user_id) do %>
+        <div class='review_title'><%= review.title %></div>
+      <% end %>
+      <%= link_to shop_review_path(review.shop_id,review.id) do %>
+        <div class="review_comment"><%= review.comment.truncate(135) %></div>
+      <% end %>
+      <div class="review_time"><%= review.created_at.strftime('%Y/%m/%d')%></div>
+    </div>      
+  <% end %>
+</div>
