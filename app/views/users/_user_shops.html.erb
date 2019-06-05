@@ -1,4 +1,5 @@
 <div class="shops_content">
+    <h3>Post Shops</h3>
     <% @shops.limit(10).each do |shop|%>
       <div class="shops_label">
         <%= link_to shop_path(shop.id) do %>
