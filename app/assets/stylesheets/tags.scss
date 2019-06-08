@@ -1,7 +1,8 @@
+/*以下 tags#index*/
 body{
   color: #3a3a3a;
 }
-.brand_tag_page{
+.brand_tag_page,.brand_shops_page{
   width: 80%;
   margin: auto;
 }
@@ -21,7 +22,13 @@ body{
               "Helvetica Neue",Helvetica,
               Arial,sans-serif;
 }
+/*以下tags#show*/
 .brand_tag_item:hover{
   text-decoration: underline;
   font-weight: bold; 
+}
+.brand_has_shop{
+  padding-top: 0; 
+  margin-left: 0; 
+  width: 100%;
 }
