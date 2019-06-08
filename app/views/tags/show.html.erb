@@ -1,20 +1,21 @@
-
-<h1>Tag#show</h1>
-
-<%= @brand.name %>
-<hr>
-<h3><%= @brand.name %> has Shops</h3>
-
-<% @shops.each do |shop|%>
-
-  <%= link_to shop_path(shop.id) do %>
-    <%= shop.name %>
-    <br>
-  <% end %>
-  <% if shop.images? %>
-      <%= image_tag shop.images.thumb.url %>
-    <% else %>
-      <%= image_tag 'koeda.png' %>
+<%= stylesheet_link_tag 'tags' %>
+<div class='brand_shops_page'>
+  <h3><%= @brand.name %> 取扱SHOP一覧</h3>
+  <div class='line'></div>
+  <div class='shop_content brand_has_shop'>
+    <% @shops.each do |shop|%>
+      <div class='shops_label'>
+        <%= link_to shop_path(shop.id) do %>
+          <% if shop.images? %>
+            <%= image_tag shop.images.thumb.url %>
+          <% else %>
+            <%= image_tag 'koeda.png' %>
+          <% end %>
+          <div class='shop_info'>
+            <p class='shop_name'><%= shop.name %></p>
+          </div>
+        <% end %>
+      </div>
     <% end %>
-<% end %>
-
+  </div>
+</div>
