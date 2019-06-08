@@ -7,8 +7,8 @@
 </div>
 <div class="shop_content_info">
   <h3 class="shop_content_title">INFORMATION</h3>
-  <%= link_to '編集する', edit_shop_path(@shop.id), class:"btn"%>
-    <% if @shop.user_id == current_user.id %>
+  <%= link_to '編集する', edit_shop_path(@shop.id), class:"btn"%>    
+    <% if user_signed_in? && @shop.user_id == current_user.id %>
       <%= link_to '削除する', shop_path(@shop.id), method: :delete, class:"btn" %>
     <% end %>
     <div class="shop_item">

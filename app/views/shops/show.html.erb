@@ -10,7 +10,7 @@
               <%= link_to user_path(review.user_id) do %>
                 <div class='review_title'><%= review.title %></div>
               <% end %>
-              <% if review.user_id == current_user.id %>
+              <% if user_signed_in? && review.user_id == current_user.id %>
                 <%= link_to '編集', edit_shop_review_path(@shop.id,review.id),class:'btn'%>
                 <%= link_to '削除', shop_review_path(@shop.id,review.id),method: :delete,class:'btn' %>
               <% end %>
