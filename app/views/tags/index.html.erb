@@ -1,11 +1,38 @@
-
-<h1>Tags#index</h1>
-
-<% @brands.each do |brand|%>
-<span>タグ名</span>
-<%= brand.name %>
-<%= link_to '詳細',tag_path(brand.id)%>
-<%= link_to '削除',tag_path(brand.id), method: :delete %>
-<br>
-
-<% end %> 
+<%= stylesheet_link_tag 'tags' %>
+<div class='brand_tag_page page'>
+  <h3>Brand List</h3>
+  <% @intial.each do |initial|%>
+    <p><%= initial.upcase %></p>
+    <div class='line'></div>
+    <% @brands.each do |brand|%>
+      <% if brand[:name][0] == initial || brand[:name][0] == initial.upcase %>
+        <div class='brand_tag'>
+          <ul>
+            <li class='brand_tag_list'>
+              <%= link_to tag_path(brand.id) ,class:'brand_tag_item' do  %>
+                <%= brand.name %>
+              <% end %>
+            </li>
+          <ul>
+        </div>      
+      <% end %>
+    <% end %>  
+  <% end %>
+  <p>0~9/Ohter</p>
+  <div class='line'></div>
+  <% @num_intial.each do |initial|%>
+    <% @brands.each do |brand|%>
+      <% if brand[:name][0] == initial || brand[:name][0] == initial.upcase %>
+        <div class='brand_tag'>
+          <ul>
+            <li class='brand_tag_list'>
+              <%= link_to tag_path(brand.id),class:'brand_tag_item' do %>
+                <%= brand.name %>
+              <% end %>
+            </li>
+          </ul>   
+        </div>
+      <% end %>
+    <% end %>  
+  <% end %>
+</div>
