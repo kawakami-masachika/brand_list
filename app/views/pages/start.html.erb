@@ -1,0 +1,19 @@
+<%= stylesheet_link_tag 'static'%>
+<div class="start_page">
+  <div class="start_content">
+    <div class='start_page_title'>
+        <h3>Start</h3>
+    </div>
+    <ul>
+      <div class='start_list'>
+        <div class='start_menu'>
+          <li><%= link_to 'ユーザー登録', new_user_registration_path, class:'start_link' %></li>
+        </div>
+        <div class='start_menu'>
+          <li><%= link_to 'ログイン', new_user_session_path, class:'start_link'%></li>
+        </div>
+        </div>
+      </div>
+    </ul>
+  </div>
+</div>
