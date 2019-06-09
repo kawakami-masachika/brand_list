@@ -5,7 +5,7 @@
   <% if user_signed_in? %>
     <%=link_to 'Let\'s share recommended shops' ,new_shop_path %>
   <% else %>
-    <%=link_to 'Let\'s share recommended shops' ,new_user_registration_path %>
+    <%=link_to 'Let\'s share recommended shops' ,'/pages/start' %>
   <% end %>
 </div>
 <div class="shop_content">

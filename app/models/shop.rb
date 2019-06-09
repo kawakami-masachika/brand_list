@@ -10,6 +10,13 @@ class Shop < ApplicationRecord
   #has_many :review_users, through: :reviews, source: :user
   mount_uploader :images, ImagesUploader
 
+  #バリデーション
+  validates :name, presence: true, uniqueness: true , length: { maximum: 30 }
+  validates :address, length: {maximum: 60}
+  validates :business_period , presence: true
+  validates :staition , presence: true, length: { maximum: 15 }
+  validates :information, length: { minimum: 20 } , length: { maximum: 150 } 
+
   # ショップの検索
   def self.serach(name)
     return Shop.all unless name
