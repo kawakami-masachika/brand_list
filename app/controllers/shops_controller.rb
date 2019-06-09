@@ -47,6 +47,7 @@ class ShopsController < ApplicationController
   def destroy
     @shop.destroy
     redirect_to current_user
+    flash[:norice] = "ショップを削除しました"
   end
 
   private
