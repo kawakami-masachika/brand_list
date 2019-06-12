@@ -10,7 +10,8 @@ Rails.application.routes.draw do
     }, only: [:confirmation,:password,:registration, :session, :unlock]
 
   root to:'shops#index'
-  resources :users, only: [:show,:index,:edit,:update] do
+  get   '/users', to: 'users#notfound'
+  resources :users, only: [:show,:edit,:update] do
     member do 
       get :shops 
       get :reviews

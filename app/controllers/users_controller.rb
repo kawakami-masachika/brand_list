@@ -36,6 +36,9 @@ class UsersController < ApplicationController
     redirect_to root_path unless @user == current_user
   end
 
+  def notfound
+    render layout: false
+  end
 
   private
   

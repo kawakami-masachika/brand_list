@@ -15,7 +15,7 @@
 @import 'defalut/footer';
 @import 'defalut/header';
 
-
+@import 'user/devise.scss';
 @import 'user/show.scss';
 @import 'user/option.scss';
 
@@ -109,7 +109,6 @@ input[type="submit"]:hover{
 .text_area{
   height: 20px ;
   width:97%;
-
 }
 textarea{
   width:100%;

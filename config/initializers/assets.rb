@@ -15,6 +15,8 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 Rails.application.config.assets.precompile += %w( header.scss )
 Rails.application.config.assets.precompile += %w( footer.scss )
 
+#以下Userモデル CSS
+Rails.application.config.assets.precompile += %w( user/devise.css )
 Rails.application.config.assets.precompile += %w( user/show.scss )
 Rails.application.config.assets.precompile += %w( user/edit.scss )
 Rails.application.config.assets.precompile += %w( user/option.scss )

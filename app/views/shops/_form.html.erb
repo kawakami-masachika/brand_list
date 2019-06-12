@@ -10,7 +10,7 @@
   <% end %>
   <div class="form shop_form">
     <div class="form_title">
-      <% if request.path_info == new_shop_path %>
+      <% if request.path_info == new_shop_path or request.fullpath == '/shops' %>
         <h3>POST SHOP</h3>
       <% else %>
         <h3>UPDATE SHOP</h3>
@@ -99,7 +99,7 @@
         </div>
       </div>
       <br>
-      <% if request.path_info == new_shop_path  %>
+      <% if request.path_info == new_shop_path or request.fullpath == '/shops'  %>
         <%= f.submit '登録' %>
       <% else %>
         <%= f.submit '更新' %>

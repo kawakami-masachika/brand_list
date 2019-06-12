@@ -1,58 +1,69 @@
-<h2>ユーザー登録</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :名前 %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+<%= stylesheet_link_tag    'user/devise' %>
+<div class='form_page'>
+  <div class='form registrations_form'>
+    <div class='form_title'>
+      <h3>ユーザー 登録</h3>
+    </div>
+    <div class='line'></div>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+      <div class='field'>
+        <div class='field_label'>
+          <%= f.label :name %>
+        </div>
+        <div class='field_area'>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+        </div>
+      </div>
+      <div class='field'>
+        <div class='field_label'>
+          <%= f.label :fav_brand %>
+        </div>
+        <div class='field_area'>
+          <%= f.text_field :fav_brand_1, autofocus: true, autocomplete: "fav_brand" %>
+        </div>  
+      </div>
+      <div class='field'>
+        <div class='field_area'>
+          <%= f.text_field :fav_brand_2, autofocus: true, autocomplete: "fav_brand" %>
+        </div>
+      </div>
+      <div class='field'>
+        <div class='field_area'>
+          <%= f.text_field :fav_brand_3, autofocus: true, autocomplete: "fav_brand" %>
+        </div>
+      </div>
+      <div class='field'>
+        <div class='field_label'>
+          <%= f.label :email %>
+        </div>
+        <div class='field_area'>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
+      </div>
+      <div class='field'>
+        <div class='field_label'>
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+            (<%= @minimum_password_length %> 文字以上)
+          <% end %>
+        </div>
+        <div class='field_area'>
+          <%= f.password_field :password, autocomplete: "new-password" %>
+        </div>
+      </div>
+      <div class='field'>
+        <div class='field_label'>
+          <%= f.label :password_confirmation %><br />
+        </div>
+        <div class='field_area'>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        </div>
+      </div>
+      <p><strong><%= link_to '利用規約', '/pages/rules' ,class:'registrations_check' %></strong>及び<strong><%= link_to 'プライバシーポリシー', '/pages/privacy',class:'registrations_check'  %></strong>に同意の上ご利用ください</p>
+      <div class="actions">
+        <%= f.submit "登録" %>
+      </div>
+    <% end %>
   </div>
-
-  <div class="field">
-    <%= f.label :年齢 %><br />
-    <%= f.number_field :age, autofocus: true %>
-  </div>
-  <label><%= f.radio_button :sex, "男" %> 男</label>
-  <label><%= f.radio_button :sex, "女" %> 女</label>
-
-  
-  <div class="field">
-    <%= f.label :お気に入りブランド %><br />
-    <%= f.text_field :fav_brand_1, autofocus: true, autocomplete: "fav_brand" %>
-  </div>
-
-  <div class="field">
-    <%= f.text_field :fav_brand_2, autofocus: true, autocomplete: "fav_brand" %>
-  </div>
-
-  <div class="field">
-    <%= f.text_field :fav_brand_3, autofocus: true, autocomplete: "fav_brand" %>
-  </div>
-
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> 文字以上)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "登録" %>
-  </div>
-<% end %>
-
-<p><%= link_to '利用規約', '/pages/rules' %>及び<%= link_to 'プライバシーポリシー', '/pages/privacy' %>に同意の上ご利用ください</p>
-
-<%= render "users/shared/links" %>
+</div>
