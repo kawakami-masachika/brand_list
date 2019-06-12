@@ -1,0 +1,14 @@
+/* User#registrations new */
+.registrations_form , .sessions_form{
+  display: inline-block;
+  margin-left: auto;  
+}
+.registrations_check:hover{
+  text-decoration: underline;
+}
+
+/* User#shared _error_messages*/
+li .error_message{
+  text-align: left;
+  list-style: none;
+}
