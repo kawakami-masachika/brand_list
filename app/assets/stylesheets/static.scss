@@ -1,5 +1,5 @@
 /*Start page*/
-.start_page{
+.start_page ,.notfound_page{
   text-align: center;
   margin-bottom: 100px;
 }
@@ -43,4 +43,24 @@
   display: inline-block;
   padding: 5px;
   border-radius: 5px; 
+}
+
+/*以下 uesers/notfound*/
+.notfound_page{
+  height: 100%;
+  background-color: #1f1f1f;
+}
+.notfound_content{
+  padding-top:20%;
+}
+.page_title{
+  color: #ffffff;
+}
+.notfound_item{
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+}
+.notfound_item:hover{
+  opacity: 0.8;
 }
