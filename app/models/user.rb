@@ -10,13 +10,6 @@ class User < ApplicationRecord
     presence: true,
     length: {maximum: 20}
 
-  validates :age,
-    presence: true,
-    :numericality => { :greater_than => 0 }
-
-  validates :sex,
-    presence: true
-
   with_options length: {maximum: 30} do
     validates :fav_brand_1
     validates :fav_brand_2
