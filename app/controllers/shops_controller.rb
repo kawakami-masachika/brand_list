@@ -22,6 +22,7 @@ class ShopsController < ApplicationController
       flash[:notice] = "ショップ情報を投稿しました"
     else
       render :new
+      binding.pry
     end
   end
 
