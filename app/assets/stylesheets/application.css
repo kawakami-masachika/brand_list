@@ -25,8 +25,8 @@
 @import 'static.scss';
 
 
-li{
-  /*list-style: none; */
+li .error_message{
+  list-style: none;
 }
 a{
   text-decoration: none;
@@ -59,7 +59,7 @@ input[type="submit"]:hover{
   text-align: center;
   font: bold;
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  background: #6dc4ff
+  background: #ee3939
 }
 /*トップページ画像 */
 .site_image{
@@ -115,6 +115,14 @@ textarea{
   resize: none;
   border:1px solid #d3d3d3;
   border-radius:2px; 
+}
+.required{
+  margin-left:5px;
+  padding:1px 4px 1px 4px ;
+  color: #ffffff;
+  background-color: #ca0b0b;
+  border:1px solid #ca0a0b;
+  border-radius:3px;
 }
 
 /*以下 SHOP 詳細ページ CSS*/
@@ -202,3 +210,4 @@ textarea{
   width: 80%;
   margin: auto;
 }
+
