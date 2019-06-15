@@ -85,3 +85,4 @@ gem 'mini_magick'
 gem 'acts-as-taggable-on'
 gem 'ransack'
 gem 'kaminari'
+gem "jquery-rails"
