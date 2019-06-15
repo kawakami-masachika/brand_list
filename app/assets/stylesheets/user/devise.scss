@@ -8,7 +8,12 @@
 }
 
 /* User#shared _error_messages*/
-li .error_message{
-  text-align: left;
+.error_message{
   list-style: none;
+}
+
+/* User#sessions new*/
+.field_checkbox{
+  display: inline-block;
+  padding-right: 10px;
 }

@@ -9,10 +9,10 @@
       <%= render "devise/shared/error_messages", resource: resource %>
       <div class='field'>
         <div class='field_label'>
-          <%= f.label :name %>
+          <%= f.label :name %><span class='required'>必須</span>
         </div>
         <div class='field_area'>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name" , placeholder:"例) masachi"%>
         </div>
       </div>
       <div class='field'>
@@ -20,32 +20,32 @@
           <%= f.label :fav_brand %>
         </div>
         <div class='field_area'>
-          <%= f.text_field :fav_brand_1, autofocus: true, autocomplete: "fav_brand" %>
+          <%= f.text_field :fav_brand_1, autofocus: true, autocomplete: "fav_brand", placeholder:"例) NIKE"%>
         </div>  
       </div>
       <div class='field'>
         <div class='field_area'>
-          <%= f.text_field :fav_brand_2, autofocus: true, autocomplete: "fav_brand" %>
+          <%= f.text_field :fav_brand_2, autofocus: true, autocomplete: "fav_brand", placeholder:"例) adidas" %>
         </div>
       </div>
       <div class='field'>
         <div class='field_area'>
-          <%= f.text_field :fav_brand_3, autofocus: true, autocomplete: "fav_brand" %>
+          <%= f.text_field :fav_brand_3, autofocus: true, autocomplete: "fav_brand", placeholder:"例) CONVERSE" %>
         </div>
       </div>
       <div class='field'>
         <div class='field_label'>
-          <%= f.label :email %>
+          <%= f.label :email %><span class='required'>必須</span>
         </div>
         <div class='field_area'>
-          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"例) abc@examle.com" %>
         </div>
       </div>
       <div class='field'>
         <div class='field_label'>
           <%= f.label :password %>
           <% if @minimum_password_length %>
-            (<%= @minimum_password_length %> 文字以上)
+            (<%= @minimum_password_length %> 文字以上)<span class='required'>必須</span>
           <% end %>
         </div>
         <div class='field_area'>

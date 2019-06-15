@@ -11,12 +11,12 @@ class Shop < ApplicationRecord
   mount_uploader :images, ImagesUploader
 
   #バリデーション
-  validates :name, presence: true, uniqueness: true , length: { maximum: 30 }
-  validates :address, length: {maximum: 60}
+  validates :name , presence: true , uniqueness: true , length: { maximum: 30 }
+  validates :address , length: {maximum: 60}
   validates :business_period , presence: true
-  validates :staition , presence: true, length: { maximum: 15 }
-  validates :information, length: { minimum: 20 } , length: { maximum: 150 } 
-
+  validates :staition , presence: true , length: { maximum: 15 }
+  validates :information , presence: true , length: { minimum: 20 } , length: { maximum: 150 } 
+  validates :brand_list , presence: true
   # ショップの検索
   def self.serach(name)
     return Shop.all unless name

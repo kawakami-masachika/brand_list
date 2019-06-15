@@ -1,7 +1,11 @@
-<div class="searchh_page">
+<%= stylesheet_link_tag    'shop/form' %>
+<div class="form_page">
   <div class="form search_form">
     <div class="form_title">
-      <h3>BRAND NAME</h3>
+      <h3>ショップ検索</h3>
+      <div class="field_label">
+        <p>ブランド名で検索をしてください</p>
+      </div>
     </div>
     <%= form_tag(search_shops_path, :method => :get) do %>
       <%= text_area_tag :name %>

@@ -1,0 +1,10 @@
+    <div class="form_page">
+      <div class="form registrations_form">
+        <div class="form_title">
+          <h3>アカウント削除</h3>
+          <p>アカウントを削除すると、あなたに関する<br>
+              情報がすべて削除されますがよろしいですか？</p>
+        </div>
+        <%= button_to "削除", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
+      </div>
+    </div>

@@ -3,9 +3,9 @@
   <%= image_tag("top_page_image",:class => "site_image") %>
   
   <% if user_signed_in? %>
-    <%=link_to 'Let\'s share recommended shops' ,new_shop_path %>
+    <%=link_to 'Let\'s share recommend shops' ,new_shop_path %>
   <% else %>
-    <%=link_to 'Let\'s share recommended shops' ,'/pages/start' %>
+    <%=link_to 'Let\'s share recommend shops' ,'/pages/start' %>
   <% end %>
 </div>
 <div class="shop_content">

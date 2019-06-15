@@ -10,7 +10,7 @@
     <%= form_for [@shop,@review] do |f| %>
       <div class="field">
         <div class="field_label">
-          <%= f.label :title %>
+          <%= f.label :title %><span class='required'>必須</span>
         </div>
         <div class="field_area">
           <%= f.text_field :title %>
@@ -19,7 +19,7 @@
       
       <div class="field">
         <div class="field_label">
-          <%= f.label :comment %>
+          <%= f.label :comment %><span class='required'>必須</span>
         </div>
         <div class="field_area">
           <%= f.text_area :comment ,rows:"10"  %>

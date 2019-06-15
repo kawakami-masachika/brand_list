@@ -3,9 +3,9 @@ ja:
     attributes:
       user:
         current_password: "現在のパスワード"
-        email: "メールアドレス"
+        email: "email"
         password: "パスワード"
-        password_confirmation: "確認用パスワード"
+        password_confirmation: "パスワード(確認用)"
         remember_me: "ログインを記憶"
     models:
       user: "ユーザ"

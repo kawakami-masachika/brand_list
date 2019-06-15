@@ -9,6 +9,10 @@ Rails.application.routes.draw do
       unlocks: 'user/unlocks',
     }, only: [:confirmation,:password,:registration, :session, :unlock]
 
+    devise_scope :user do
+      get 'user/quit', to: 'users/registrations#quit'
+    end
+
   root to:'shops#index'
   get   '/users', to: 'users#notfound'
   resources :users, only: [:show,:edit,:update] do
