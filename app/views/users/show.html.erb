@@ -9,8 +9,6 @@
     </div>
     <ul class='user_info_lists'>
       <li class='user_info_list'><%= @user.name %></li>
-      <li class='user_info_list'><%= @user.age %>歳</li>
-      <li class='user_info_list'><%= @user.sex %></li>
       <p class='user_fav_brand_label'>■お気に入りブランド</p>
       <% if  @user.fav_brand.nil? %>
         <li class="user_info_list">なし</li>

@@ -17,7 +17,7 @@
     <%= form_for @user do |f|%>
       <div class="field">
         <div class='field_label'>
-          <%= f.label :name %><br />
+          <%= f.label :name %><span class='required'>必須</span>
         </div>
         <div class='field_area'>
           <%= f.text_field :name, autofocus: true, autocomplete: "name", class:'text_area'%>
