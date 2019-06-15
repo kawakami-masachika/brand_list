@@ -19,28 +19,28 @@
     <%= form_for(shop) do |f| %>
       <div class="field">
         <div class="field_label">
-          <%= f.label :name %>
+          <%= f.label :name %><span class='required'>必須</span>
         </div>
         <div class="field_area">
-          <%= f.text_field :name %>
+          <%= f.text_field :name, placeholder:"例) Tsunagi" %>
         </div>
       </div>
 
       <div class="field">
         <div class="field_label">
-          <%= f.label :address %>
+          <%= f.label :address %><span class="required">必須</span>
         </div>
-        <div class='field_area'>
-          <%= f.text_field :address %>
+        <div class="field_area">
+          <%= f.text_field :address, placeholder:"例) 東京都渋谷区神南1-1-1" %>
         </div>
       </div>
 
       <div class="field">
         <div class="field_label">
-          <%= f.label :business_period %>
+          <%= f.label :business_period %><span class='required'>必須</span>
         </div>
-        <div class='field_area'>
-          <%= f.text_field :business_period %>
+        <div class="field_area">
+          <%= f.text_field :business_period, placeholder:"例) 10:00~20:00 毎週水曜 定休日" %>
         </div>
       </div>
 
@@ -49,7 +49,7 @@
           <%= f.label :staition %>
         </div>
         <div class="field_area">
-          <%= f.text_field :staition %>
+          <%= f.text_field :staition, placeholder:"例) 渋谷駅" %>
         </div>
       </div>
 
@@ -58,7 +58,7 @@
           <%= f.label :tel %>
         </div>
         <div class="field_area">
-          <%= f.text_field :tel %>
+          <%= f.text_field :tel, placeholder:"例) 0120-123-456" %>
         </div>
       </div>
 
@@ -67,16 +67,16 @@
           <%= f.label :url %>
         </div>
         <div class="field_area" >
-          <%= f.text_field :url %>
+          <%= f.text_field :url, placeholder:'例) http://www.sample.xxx.co.jp/' %>
         </div>
       </div>
 
       <div class="field">
         <div class="field_label">
-          <%= f.label :information %>
+          <%= f.label :information %><span class='required'>必須</span>
         </div>
         <div class="field_area">
-          <%= f.text_area :information, rows: "5"%>
+          <%= f.text_area :information, rows: "5",placeholder:"例) 取扱いブランドも豊富で、スタッフの方がフレンドリーなため、初見の方でも来店しやすいです。"%>
         </div>
       </div>
 
@@ -92,17 +92,17 @@
       </div>
       <div class="field">
         <div class="field_label">
-          タグ
+          取扱いブランド ＊カンマ(,)区切りで入力してください。<span class='required'>必須</span>
         </div>
         <div class="field_area">
-          <%= text_area_tag 'shop[brand_list]', shop.brand_list.join(","), class: "form-control",rows:"3" %>
+          <%= text_area_tag 'shop[brand_list]', shop.brand_list.join(","), class: "form-control",rows:"3", placeholder:"例) SUNSEA,UNUSED,Needless"%>
         </div>
       </div>
       <br>
-      <% if request.path_info == new_shop_path or request.fullpath == '/shops'  %>
-        <%= f.submit '登録' %>
+      <% if request.path_info == new_shop_path or request.fullpath == "/shops"  %>
+        <%= f.submit "登録" %>
       <% else %>
-        <%= f.submit '更新' %>
+        <%= f.submit "更新" %>
       <% end %>
     <% end %>
   </div>
