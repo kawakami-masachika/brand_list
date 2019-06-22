@@ -17,10 +17,24 @@ class Shop < ApplicationRecord
   validates :staition , presence: true , length: { maximum: 15 }
   validates :information , presence: true , length: { minimum: 20 } , length: { maximum: 150 } 
   validates :brand_list , presence: true
+
   # ショップの検索
-  def self.serach(name)
-    return Shop.all unless name
-    Shop.tagged_with([name], :any => true)
+  def self.search(brand_names)
+    shops = Shop.all
+    treat_shops = []
+    brand_names.each do |brand|
+      shops.each do |shop|
+        shop.brand_list.each do |brands|
+        #binding.pry
+          if brands.match?(/#{brand}/)  
+            treat_shops.push(shop)
+          end
+        end
+      end
+    end
+    return treat_shops.
+    
+    
   end
 
 end
