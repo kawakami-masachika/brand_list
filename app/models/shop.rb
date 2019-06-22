@@ -32,9 +32,7 @@ class Shop < ApplicationRecord
         end
       end
     end
-    return treat_shops.
-    
-    
+    return treat_shops
   end
 
 end
