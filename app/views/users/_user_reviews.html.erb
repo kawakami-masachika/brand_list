@@ -1,6 +1,6 @@
 <div class='shop_review user_review'>
   <h3>Post Reviews</h3>
-  <% @reviews.limit(5).each do |review|%>
+  <% @reviews.each do |review|%>
     <div class="shop_review_content">
       <%= link_to user_path(@user,review.user_id) do %>
         <div class='review_title'><%= review.title %></div>

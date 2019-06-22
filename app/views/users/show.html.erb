@@ -19,9 +19,9 @@
   </div>
   <div class='line'></div>
   <%=render 'users/user_shops'%>
-  <%= link_to "すべて見る(#{@shops.size})", shops_user_path(@user.id),class:'all_post_shops'%>
+  <%= link_to "すべて見る(#{@post_shops.size})", shops_user_path(@user.id),class:'all_post_shops'%>
   <div class="line"></div>
   <%= render 'user_reviews'%>
-  <%= link_to "すべて見る(#{@user.reviews.count})", reviews_user_path(@user.id), class:'all_post_reviews'%>
+  <%= link_to "すべて見る(#{@post_reviews.count})", reviews_user_path(@user.id), class:'all_post_reviews'%>
 
     
