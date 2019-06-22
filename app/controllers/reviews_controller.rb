@@ -17,24 +17,30 @@ class ReviewsController < ApplicationController
     @shop = Shop.find(params[:shop_id])
     @review = Review.new(review_params)
     if @review.save
-      redirect_to current_user
+      redirect_to @shop
+      flash[:notice] = 'レビューを投稿しました'
     else
       render :new
     end
   end
 
   def edit
-    @shop = Shop.find(params[:shop_id])
+    if @review.user_id == current_user.id
+      @shop = Shop.find(params[:shop_id])
+    else 
+      redirect_to root_path
+      flash[:alert] = '権限がありません'
+    end
   end
 
   def update
     @shop = @review.shop
     if @review.update(review_params)
       redirect_to @shop
-      flash[:notice] =  "レビューを編集しました"
+      flash[:notice] =  'レビューを編集しました'
     else
       render :edit
-      flash[:alert] = "レビューの編集に失敗しました"
+      flash[:alert] = 'レビューの編集に失敗しました'
     end
   end
 
@@ -47,6 +53,7 @@ class ReviewsController < ApplicationController
     @shop = @review.shop
     @review.destroy
     redirect_to @shop
+    flash[:notice] = 'レビューを削除しました'
   end
 
   private

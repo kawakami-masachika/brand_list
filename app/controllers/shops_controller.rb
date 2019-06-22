@@ -7,7 +7,7 @@ class ShopsController < ApplicationController
   end
 
   def search
-    @brands = Shop.serach(params[:name].split(/[\p{blank}\s]+/)) if params[:name].present?
+    @shops = Shop.all.search(params[:name].split(/[\p{blank}\s]+/)) if params[:name].present?
   end
 
   def new
@@ -31,7 +31,7 @@ class ShopsController < ApplicationController
   def update
     if @shop.update(shop_params)
       redirect_to action: 'show' 
-      flash[:norice] = "ショップ情報を編集しました"
+      flash[:notice] = "ショップ情報を編集しました"
     else
       render :edit
       flash[:alert] = "ショップ情報の編集に失敗しました"
@@ -47,7 +47,7 @@ class ShopsController < ApplicationController
   def destroy
     @shop.destroy
     redirect_to current_user
-    flash[:norice] = "ショップを削除しました"
+    flash[:notice] = "ショップを削除しました"
   end
 
   private

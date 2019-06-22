@@ -57,9 +57,11 @@ input[type="submit"]:hover{
 /*プロフィール編集後 アラート*/
 .alert{
   text-align: center;
-  font: bold;
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   background: #ee3939
+}
+.notice{
+  text-align: center;
+  background: #41b3ff;
 }
 /*トップページ画像 */
 .site_image{

@@ -13,21 +13,21 @@
     <% end %>
   </div>
   <div class="shop_content">
-    <% if @brands.present? %>
-      <% @brands.each do |brand|%>
+    <% if @shops.present? %>
+      <% @shops.each do |shop|%>
         <div class="shops_label">
-          <% if brand.images? %>
-            <%= link_to shop_path(brand.id) do %>
-              <%= image_tag brand.images.thumb.url %>
+          <% if shop.images? %>
+            <%= link_to shop_path(shop.id) do %>
+              <%= image_tag shop.images.thumb.url %>
             <% end %>
           <% else %>
-            <%= link_to shop_path(brand.id) do %>
+            <%= link_to shop_path(shop.id) do %>
               <%= image_tag 'koeda.png' %>
-            <% end %>
-            <div class="shop_info">
-              <p class="shop_name"><%= brand.name %></p>
-            </div>     
+            <% end %>     
           <% end %>
+          <div class="shop_info">
+            <p class="shop_name"><%= shop.name %></p>
+          </div>
         </div>
       <% end %>
     <% end %>

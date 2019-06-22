@@ -1,13 +1,19 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :shops, :reviews, :option]
-
+  before_action :authenticate_user!, only: [:edit]
   def show
-    @shops = @user.shops
-    @reviews = @user.reviews
+    @shops = @user.shops.limit(12).order(id: "DESC")
+    @post_shops = @user.shops
+    @reviews = @user.reviews.limit(5).order(id: "DESC")
+    @post_reviews = @user.reviews
   end
 
   def edit
     set_fav_brand
+    unless @user == current_user     
+      redirect_to root_path
+      flash[:alert] = '他のユーザーは編集できません'
+    end
   end
 
   def update
@@ -34,6 +40,7 @@ class UsersController < ApplicationController
 
   def option
     redirect_to root_path unless @user == current_user
+    flash[:alert] = '権限がありません。'
   end
 
   def notfound
