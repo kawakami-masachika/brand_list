@@ -86,3 +86,34 @@ div{
 .review_title{
   font-weight: bold;
 }
+/*スマホ対応*/
+@media (max-width:600px){
+  .user_info{
+    width: 95%;
+    margin: auto;
+    font-weight:bold; 
+  }
+  .shops_content{
+    width: 95%;
+    margin: auto;
+  }
+  .shops_label {
+  width: 125px;
+  margin: 0 12px 12px 0;
+  display: inline-block;
+  margin: 0 16px 16px 0;
+  border: 3px solid #ccc;
+  border-radius: 10px;   
+  }
+  .shop_image{
+    width: 125px;
+    padding-top:0; 
+    border-radius: 10px 10px 0 0; 
+  }
+  .shop_info{
+    width: 125px;
+  }
+  .shop_name{
+    font-size: 1px;
+  }
+}

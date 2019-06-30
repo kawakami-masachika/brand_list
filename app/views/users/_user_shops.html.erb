@@ -4,9 +4,9 @@
       <div class="shops_label">
         <%= link_to shop_path(shop.id) do %>
           <% if shop.images? %>
-            <%= image_tag shop.images.thumb.url ,class:'shop_image'%>
+            <%= image_tag shop.images.thumb.url ,class:'shop_image',media:"(max-width:600px)"%>
           <% else %>
-            <%= image_tag 'koeda.png' %>
+            <%= image_tag 'koeda.png',class:'shop_image',media:"(max-width:600px)" %>
           <% end %>
           <div class="shop_info">
             <p class="shop_name"><%= shop.name %></p>

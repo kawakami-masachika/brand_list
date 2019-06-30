@@ -14,7 +14,9 @@
     <div class="shop_item">
     <div class="shop_item_title">ショップ名</div>
       <% if @shop.name?%>
-        <%= @shop.name %>
+        <div class="shop_item_content">
+          <%= @shop.name %>
+        </div>
       <% else %>
         <p> ― </p>
       <% end %>
@@ -23,7 +25,9 @@
     <div class="shop_item">
       <div class="shop_item_title">住所</div>
       <% if @shop.address?%>
-        <%= @shop.address %>
+        <div class="shop_item_content">
+          <%= @shop.address %>
+        </div>
       <% else %>
         <span>ー</span>
       <% end %>
@@ -32,7 +36,9 @@
     <div class="shop_item">
       <div class="shop_item_title">電話番号</div>
       <% if @shop.tel? %>
-        <%= @shop.tel %>
+        <div class="shop_item_content">
+          <%= @shop.tel %>
+        </div>
       <% else %>
         <span>ー</span>
       <% end %>
@@ -41,7 +47,9 @@
     <div class="shop_item">
       <div class="shop_item_title">営業時間・定休日</div>
       <% if @shop.business_period? %>
-        <%= @shop.business_period %>
+        <div class="shop_item_content">
+          <%= @shop.business_period %>
+        </div>
       <% else %>
         <span>ー</span>
       <% end %>
@@ -50,7 +58,9 @@
     <div class="shop_item">
       <div class="shop_item_title">おすすめポイント</div>
       <% if @shop.information? %>
-        <%= @shop.information %>
+        <div class="shop_item_content">
+          <%= @shop.information %>
+        </div>
       <% else %>
         <span>ー</span>
       <% end %>

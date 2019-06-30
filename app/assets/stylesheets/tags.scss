@@ -1,14 +1,16 @@
+/*共通部分*/
 /*以下 tags#index*/
 body{
   color: #3a3a3a;
 }
 .brand_tag_page,.brand_shops_page{
-  width: 80%;
+  width: 95%;
   margin: auto;
 }
+/*スマホ対応*/
 .brand_tag{
   display: inline-block;
-  width: 200px;
+  width: 150px;
   height: 30px;
 }
 .brand_tag_list{
@@ -31,4 +33,17 @@ body{
   padding-top: 0; 
   margin-left: 0; 
   width: 100%;
+}
+
+@media (min-width:960px){
+  /*以下 tags#index*/
+  .brand_tag_page,.brand_shops_page{
+    width: 80%;
+    margin: auto;
+  }
+  .brand_tag{
+    display: inline-block;
+    width: 200px;
+    height: 30px;
+  }
 }
