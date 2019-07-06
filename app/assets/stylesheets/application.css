@@ -24,6 +24,13 @@
 @import 'tags.scss';
 @import 'static.scss';
 
+html*{
+	box-sizing: border-box;
+}
+body{
+  margin: 0;
+}
+
 @media (max-width:600px){
   body{
     font-size: 13px;
