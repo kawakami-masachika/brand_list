@@ -33,6 +33,6 @@ class Shop < ApplicationRecord
       end
     end
     return treat_shops
-    end
+  end
 
 end

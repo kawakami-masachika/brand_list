@@ -48,6 +48,7 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
+  <<: *default
+  database: brand_list_production
   username: brand_list
   password: <%= ENV['BRAND_LIST_DATABASE_PASSWORD'] %>
-  adapter: postgresql

@@ -85,9 +85,5 @@ gem 'mini_magick'
 gem 'acts-as-taggable-on'
 gem 'ransack'
 gem 'kaminari'
-gem "jquery-rails"
-
-group :production do
-  gem 'pg', '~> 0.18'  # バージョンを指定しないとうまく動かない
-  gem 'rails_12factor'
-end
+gem 'jquery-rails' 
+gem 'jquery-ui-rails'
