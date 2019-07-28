@@ -12,17 +12,17 @@
  *
  */
 /*@import 'shops.scss'; */
-@import 'defalut/footer.scss';
-@import 'defalut/header.scss';
+@import 'defalut/footer.css';
+@import 'defalut/header';
 
-@import 'user/devise.scss';
-@import 'user/show.scss';
+@import 'user/devise.css';
+@import 'user/show.css';
 @import 'user/option.scss';
 
-@import 'shop/form.scss';
+@import 'shop/form.css';
 @import 'reviews.scss';
 @import 'tags.scss';
-@import 'static.scss';
+@import 'static.css';
 
 @media (max-width:600px){
   body{
