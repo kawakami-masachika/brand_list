@@ -5,8 +5,8 @@ ruby '2.5.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
-# Use mysql as the database for Active Record
-gem 'mysql2', '>= 0.4.4', '< 0.6.0'
+# Use mysql as the database for Active Record Heroku変更点
+gem 'mysql2', '>= 0.4.4', '< 0.6.0' , group: :development
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -87,3 +87,5 @@ gem 'ransack'
 gem 'kaminari'
 gem 'jquery-rails' 
 gem 'jquery-ui-rails'
+#Heroku up追加部分
+gem 'pg', group: :production
