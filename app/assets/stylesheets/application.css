@@ -12,8 +12,8 @@
  *
  */
 /*@import 'shops.scss'; */
-@import 'defalut/footer';
-@import 'defalut/header';
+@import 'defalut/footer.scss';
+@import 'defalut/header.scss';
 
 @import 'user/devise.scss';
 @import 'user/show.scss';
