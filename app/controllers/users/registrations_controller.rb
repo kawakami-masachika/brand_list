@@ -11,7 +11,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   #POST /resource
   def create
-    binding.pry
     super
     resource.join_fav_brands( params[:user][:fav_brand_1],
                               params[:user][:fav_brand_2],
